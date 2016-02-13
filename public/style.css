@@ -25,7 +25,7 @@
 }
 
 #sear{
-	margin-top:200px;
+	margin-top:20px;
 
 }
 #bar{
@@ -62,7 +62,14 @@ body{
 	background-color: white;
 	height: 400px;
 }
-
+.which{
+	margin-top: 20px;
+}
+#undefined{
+	margin-top: 100px;
+	width: 200px;
+	height: 200px;
+}
 #d3img{
 	height: 200px;
 }
