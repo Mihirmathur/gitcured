@@ -1,0 +1,25 @@
+.red{
+	color:#e93432;
+}
+
+.navbar-default, .navbar-brand {
+    background-color:#e93432;
+}
+
+.form-control{
+	padding-top: 10px;
+}
+
+.top{
+	padding-top: 7px;
+}
+
+.topmore{
+	padding-top: 14px;
+}
+
+.brand{
+	padding-top: 17px;
+	margin-bottom: 2px;
+	color: white !important;
+}
