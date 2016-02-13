@@ -33,7 +33,7 @@ h6 { font-size: 20px; }
 
 hr { display: block; padding: 0; border: 0; height: 1px; background-color: rgba(0, 0, 0, 0.3); max-width: 100%; margin: 10px auto; }
 
-input, textarea { font-family: Avenir, HelveticaNeue, "Helvetica Neue", Helvetica, Arial, Avenir, Verdana, Sans-serif; font-size: 13px; line-height: 1.4em; font-weight: 300; color: #000; -webkit-appearance: none; background-color: #FFF; -webkit-border-radius: 0px; -moz-border-radius: 0px; border-radius: 0px; border: 0px; outline: none; padding: 5px 10px; height: 20px; border: 1px solid rgba(0, 0, 0, 0.3); resize: none; }
+input, textarea { font-family: Avenir, HelveticaNeue, "Helvetica Neue", Helvetica, Arial, Avenir, Verdana, Sans-serif; font-size: 14px; line-height: 1.4em; font-weight: 300; color: #000; -webkit-appearance: none; background-color: #FFF; -webkit-border-radius: 0px; -moz-border-radius: 0px; border-radius: 0px; border: 0px; outline: none; padding: 5px 10px; height: 20px; border: 1px solid rgba(0, 0, 0, 0.3); resize: none; }
 
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { color: rgba(0, 0, 0, 0.3); }
 
@@ -60,7 +60,7 @@ header {
 	height:40px;
 }
 
-#logo {
+header #logo {
 	font-size:24px;
 	line-height:24px;
 	font-weight:900;
@@ -70,14 +70,18 @@ header {
 	margin-right:16px;
 }
 
-#user {
+header #user {
 	float:right;
 	line-height:24px;
 	padding:8px 0;
 	margin-left:16px;
 }
 
-#search {
+header #user > a {
+	text-decoration: none;
+}
+
+header #search {
 	color:#FFF;
 	height:24px;
 	margin:0 auto;
@@ -134,18 +138,37 @@ main > section {
 	width:auto;
 	overflow:auto;
 	padding:24px;
+	padding-bottom:64px;
 }
 
 #right_panel {
+	float:right;
 	height:100%;
-	width: 200px;
+	width: 500px;
 	overflow:auto;
+	padding:24px;
+	padding-bottom:64px;
 }
 
 .section_title {
 	font-weight:bold;
 	font-size:24px;
 	line-height:1em;
+}
+
+.section_subtitle {
+	color:rgba(0,0,0,0.5);
+	font-style:italic;
+}
+
+.section_subtitle a {
+	text-decoration: none;
+	font-weight:800;
+}
+
+.section_subtitle a:hover {
+	text-decoration: underline;
+	font-weight:800;
 }
 
 .button {
@@ -156,10 +179,19 @@ main > section {
 	border-radius:5px;
 	padding:8px;
 	display:inline-block;
+	margin-right:16px;
+	margin-left:0;
+}
+
+.button:hover {
+	color:#FFF;
+	background-color:#e93432;
 }
 
 .button.right {
 	float:right;
+	margin-left:16px;
+	margin-right:0;
 }
 
 nav {
@@ -190,6 +222,7 @@ nav li a:hover {
 	display:table;
 	width:100%;
 	margin:16px 0;
+	border-radius:3px;
 }
 
 #questions > li {
@@ -218,6 +251,7 @@ nav li a:hover {
 	text-align:center;
 	display:block;
 	padding-top:4px;
+	text-decoration: none;
 }
 
 #questions > li > .votes > a:hover {
@@ -275,4 +309,76 @@ nav li a:hover {
 
 #questions > li > .element .tags a:hover {
 	text-decoration: underline;
+}
+
+section.chat {
+	position:relative;
+	padding-top:0 !important;
+	padding-bottom:0 !important;
+	border-left:1px solid rgba(0,0,0,0.1);
+}
+
+section.chat > ul {
+	position:absolute;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	overflow:hidden;
+	margin:24px;
+}
+
+section.chat .chathead {
+	position:absolute;
+	top:0;
+	left:0;
+	right:0;
+}
+
+section.chat .conversation {
+	overflow:auto;
+	position:absolute;
+	top:60px;
+	left:0;
+	right:0;
+	bottom:50px;
+}
+
+section.chat .conversation .time {
+	float:left;
+	color:rgba(0,0,0,0.5);
+	width:60px;
+	font-size:11px;
+	line-height:24px;
+}
+
+section.chat .conversation .message {
+	overflow:hidden;
+}
+
+section.chat .conversation .message a.user {
+	text-decoration: none;
+	font-weight:800;
+	margin-right:8px;
+}
+
+section.chat .inputbox {
+	position:absolute;
+	left:0;
+	right:0;
+	bottom:0;
+	height:50px;
+}
+
+section.chat .inputbox > .textarea_wrap {
+	border:2px solid rgba(0,0,0,0.2);
+	border-radius:3px;
+	padding:8px;
+}
+
+section.chat .inputbox > .textarea_wrap > textarea {
+	border:0 solid transparent;
+	padding:0;
+	margin:0;
+	width:100%;
 }
