@@ -23,3 +23,37 @@
 	margin-bottom: 2px;
 	color: white !important;
 }
+
+#sear{
+	margin-top:200px;
+}
+
+body{
+	background-color: #fff2f2 !important;
+}
+
+.btn-default{
+	    color: #FFF;
+    background-color: #E93432;
+}
+
+.btn-default:hover{
+	    color: #FFF;
+    background-color: #E93432;
+}
+.form-control{
+	border:none;
+	box-shadow: none;
+}
+.form-control:focus{
+	border:none;
+
+}
+.d3{
+	background-color: white;
+	height: 600px;
+}
+
+#d3img{
+	height: 200px;
+}

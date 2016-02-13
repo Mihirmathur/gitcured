@@ -25,4 +25,4 @@ var Hello = React.createClass({
   }
 });
 
-React.render(<Hello name='World' />, document.getElementById('head')); 
+ReactDOM.render(<Hello />, document.getElementById('head')); 
