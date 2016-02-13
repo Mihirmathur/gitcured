@@ -17,12 +17,15 @@
   },
   "homepage": "https://github.com/Mihirmathur/treehacks-health#readme",
   "dependencies": {
+    "bcryptjs": "^2.3.0",
     "body-parser": "^1.15.0",
     "express": "^4.13.4",
+    "express-session": "^1.13.0",
     "mongoose": "^4.4.3",
     "node-jsx": "^0.13.3",
     "nodemon": "^1.8.1",
     "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
     "react": "^0.14.7"
   }
 }
