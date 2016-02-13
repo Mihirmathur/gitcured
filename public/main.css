@@ -5,8 +5,6 @@ ul, li { list-style: none; list-style-type: none; display: block; }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; word-wrap: break-word; }
 
-h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure { margin-bottom: 15px; }
-
 img { border: none; max-width: 100%; vertical-align: middle; margin: 0 auto; padding: 0; display: block; }
 
 table { border-collapse: collapse; border-spacing: 0; }
@@ -99,6 +97,8 @@ header {
 	height:24px;
 	padding:0;margin:0;
 	width:100%;
+	font-size:18px;
+	text-align:center;
 }
 
 #search > input::-webkit-input-placeholder { color: rgba(255, 255, 255, 0.5); }
@@ -148,6 +148,20 @@ main > section {
 	line-height:1em;
 }
 
+.button {
+	text-decoration: none;
+	border:2px solid #e93432;
+	color:#e93432;
+	font-weight:900;
+	border-radius:5px;
+	padding:8px;
+	display:inline-block;
+}
+
+.button.right {
+	float:right;
+}
+
 nav {
 	padding-bottom:16px;
 }
@@ -172,8 +186,93 @@ nav li a:hover {
 	background-color:#fff2f2;
 }
 
+#questions {
+	display:table;
+	width:100%;
+	margin:16px 0;
+}
+
+#questions > li {
+	display:table-row;
+}
+
+#questions > li:nth-child(even) {
+	background-color:rgba(0,0,0,0.04);
+}
+
+#questions > li > div {
+	display:table-cell;
+	padding:4px 0px;
+}
+
 #questions > li > .votes {
-	float:left;
 	width:50px;
 	text-align:center;
+	vertical-align:top;
+}
+
+#questions > li > .votes > a {
+	cursor:pointer;
+	width:30px;
+	margin:0 auto;
+	text-align:center;
+	display:block;
+	padding-top:4px;
+}
+
+#questions > li > .votes > a:hover {
+	padding-top:2px;
+	padding-bottom:2px;
+}
+
+#questions > li > .votes > div {
+	font-size:10px;
+	line-height:1.4em;
+}
+
+#questions > li > .element > a {
+	color:#e93432;
+	font-weight:500;
+	font-size:18px;
+	line-height:1.3em;
+	text-decoration: none;
+}
+
+#questions > li > .element > div {
+	line-height:1em;
+}
+
+#questions > li > .element > div > a {
+	text-decoration: none;
+	font-size:12px;
+	margin-right:4px;
+	color:rgba(0,0,0,0.7);
+}
+
+#questions > li > .element > div > a:hover {
+	text-decoration: underline;
+}
+
+#questions > li > .element ul.tags {
+	display:inline-block;
+	vertical-align: bottom;
+}
+
+#questions > li > .element .tags li {
+	float:left;
+	margin-right:4px;
+	display:inline;
+}
+
+#questions > li > .element .tags a {
+	font-size:9px;
+	text-decoration: none;
+	padding:1px 3px;
+	background-color:#fff2f2;
+	border-radius:3px;
+	color:rgba(0,0,0,0.5);
+}
+
+#questions > li > .element .tags a:hover {
+	text-decoration: underline;
 }
