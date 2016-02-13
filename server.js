@@ -47,11 +47,14 @@ io.on('connection', function (socket) {
 
 	socket.on('new message', function(data){
 		console.log("message has emitted")
-		socket.emit('new message', {
+		var d = new Date()
+		var data_message = {
 			username: "somebody",
-			timestamp: "9:30 PM",
+			timestamp: d.toLocaleTimeString().replace(/(.*)\D\d+/, '$1'),
 			message: data.message
-		})
+		}
+		socket.emit('new message', data_message)
+		socket.broadcast.emit('new message', data_message)
 	});
 
 	socket.on('add user', function(username) {
