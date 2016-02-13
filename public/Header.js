@@ -26,5 +26,4 @@ var Hello = React.createClass({
 });
 
 
-ReactDOM.render(<Hello />, document.getElementById('head')); 
-
+ReactDOM.render(<Hello />, document.getElementById('head'));
