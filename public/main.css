@@ -57,7 +57,7 @@ header {
 	color:#FFF;
 	padding:16px 24px;
 	font-weight:500;
-	height:60px;
+	height:72px;
 }
 
 header #logo {
@@ -65,7 +65,7 @@ header #logo {
 	line-height:24px;
 	font-weight:900;
 	float:left;
-	height:24px;
+	height:40px;
 	padding:8px 0;
 	margin-right:16px;
 }
@@ -75,6 +75,7 @@ header #user {
 	line-height:24px;
 	padding:8px 0;
 	margin-left:16px;
+	height:40px;
 }
 
 header #user > a {
@@ -83,7 +84,7 @@ header #user > a {
 
 header #search {
 	color:#FFF;
-	height:35px;
+	height:40px;
 	margin:0 auto;
 	width:auto;
 	overflow:hidden;
@@ -221,7 +222,8 @@ nav li a {
 	display:block;
 	text-decoration:none;
 	font-size:15px;
-	padding:4px 4px 4px 16px;
+	line-height:1.1em;
+	padding:6px 4px 6px 16px;
 	margin:0 -4px 0 -16px;
 	border-top-right-radius: 3px;
 	border-bottom-right-radius:3px;
