@@ -371,6 +371,12 @@ section.chat .conversation {
 	bottom:50px;
 }
 
+section.chat .conversation li:after {
+	content:'';
+	display:block;
+	clear:both;
+}
+
 section.chat .conversation .time {
 	float:left;
 	color:rgba(0,0,0,0.5);

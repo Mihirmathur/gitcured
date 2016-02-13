@@ -43,25 +43,27 @@ require('./config/routes.js')(app);
 var numUsers = 0;
 
 io.on('connection', function (socket) {
-	console.log("a user has connected")
+	console.log("a user has connected");
 
 	socket.on('new message', function(data){
-		socket.broadcast.emit('new message', {
+		console.log("message has emitted")
+		socket.emit('new message', {
 			username: "somebody",
-			message: data
+			timestamp: "9:30 PM",
+			message: data.message
 		})
-	})
+	});
 
 	socket.on('add user', function(username) {
 		if (addedUser) return;
 		++numUsers;
-	})
+	});
 
 	socket.on('disconnect', function(){
 		console.log("a user has disconnected")
 		--numUsers;
 	})
-})
+});
 
 
 http.listen(8000, function() {
