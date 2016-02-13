@@ -21,11 +21,10 @@
     <script src="https://fb.me/JSXTransformer-0.13.3.js"></script>
     <script type="text/jsx" src="/Header.js"></script>
     <script type="text/jsx" src="/Searchbar.js"></script>
-    <script type="text/javascript" src="modal.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script>
       var socket = io();
-    </script>
+  </script>
 </head>
 <body>
     <div id="contain">
@@ -44,38 +43,43 @@
 
                 <div id="form">
                     <div class="form_cont col-md-12">
+                        <center><h5>Signup</h5></center><br><br>
                         <div class="col-md-4">
                             <span class="prompt">NAME:</span>
                         </div>
                         <div class="col-md-7">
-                           <input id="name" class="form_input" placeholder="Firstname Lastname"></input>
-                       </div>
-                       <br><br><br>
-                       <div class="col-md-4">
-                            <span class="prompt"class="form_input">AGE:</span>
-                        </div>
-                        <div class="col-md-7">
-                           <input id="age" class="form_input" placeholder="42"></input>
-                       </div>
-                       <br><br><br>
-                       <div class="col-md-4">
-                            <span class="prompt" class="form_input">EMAIL:</span>
-                        </div>
-                        <div class="col-md-7">
-                           <input id="email" class="form_input" placeholder="yourname@gmail.com"></input>
-                       </div>
-                       <br><br><br>
-                       <div class="col-md-4">
-                            <span class="prompt" class="form_input">PASSWORD:</span>
-                        </div>
-                        <div class="col-md-7">
-                           <input id="email" class="form_input" placeholder="**********"></input>
-                       </div>
-                   </div>
-               </div>
-           </center>
-       </div>
-   </div>
+                         <input id="name" class="form_input" placeholder="Firstname Lastname"></input>
+                     </div>
+                     <br><br><br>
+                     <div class="col-md-4">
+                        <span class="prompt"class="form_input">AGE:</span>
+                    </div>
+                    <div class="col-md-7">
+                     <input id="age" class="form_input" placeholder="42"></input>
+                 </div>
+                 <br><br><br>
+                 <div class="col-md-4">
+                    <span class="prompt" class="form_input">EMAIL:</span>
+                </div>
+                <div class="col-md-7">
+                 <input id="email" class="form_input" placeholder="yourname@gmail.com"></input>
+             </div>
+             <br><br><br>
+             <div class="col-md-4">
+                <span class="prompt" class="form_input">PASSWORD:</span>
+            </div>
+            <div class="col-md-7">
+             <input id="email" class="form_input" placeholder="**********"></input>
+         </div>
+         <br><br>
+         <button type="button" class="btn btn-danger">Sign-Up</button>
+     </div>
+ </div>
+</center>
+</div>
+</div>
+<div id="foot">
+</div>
 
 </body>
 </html>

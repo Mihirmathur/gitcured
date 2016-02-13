@@ -1,6 +1,6 @@
 var Searchbar = React.createClass({  
   render: function() {
-    return <div className="input-group col-md-4">
+    return <div className="input-group col-md-4" id="bar">
         <div className="input-group-btn">
         	<button className="btn btn-default" type="submit">
         		<i className="glyphicon glyphicon-search"></i>
