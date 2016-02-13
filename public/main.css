@@ -69,18 +69,22 @@ header {
 	float:left;
 	height:24px;
 	padding:8px 0;
+	margin-right:16px;
 }
 
 #user {
 	float:right;
 	line-height:24px;
 	padding:8px 0;
+	margin-left:16px;
 }
 
 #search {
 	color:#FFF;
 	height:24px;
 	margin:0 auto;
+	width:auto;
+	overflow:hidden;
 	max-width:500px;
 	background-color:#C21B19;
 	padding:8px;
@@ -104,6 +108,13 @@ input:-moz-placeholder { color: rgba(255, 255, 255, 0.5); }
 
 main {
 	margin-top:72px;
+	position:relative;
+}
+
+#left_panel {
+	position
+	width:14px;
+	padding:16px;
 }
 
 .section_title {
