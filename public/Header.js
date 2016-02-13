@@ -1,4 +1,4 @@
-var Hello = React.createClass({  
+var Hello = React.createClass({
   render: function() {
     return <div>
     <nav className="navbar navbar-default navbar-fixed-top">
@@ -13,11 +13,11 @@ var Hello = React.createClass({
 	    		</input>
 	    	</div>
 	    	<div className="col-md-3 top">
-	    	
+
 	    		<input type="email" className="form-control" id="InputPassword" placeholder="password">
 	    		</input>
-	    	
-	    		
+
+
 	    	</div>
 	    </div>
     </nav>
@@ -25,4 +25,6 @@ var Hello = React.createClass({
   }
 });
 
+
 ReactDOM.render(<Hello />, document.getElementById('head')); 
+
