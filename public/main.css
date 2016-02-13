@@ -326,6 +326,11 @@ nav li a:hover {
 	text-decoration: underline;
 }
 
+#logout{
+	width: 80px;
+	height: 30px;
+}
+
 section.chat {
 	position:relative;
 	padding-top:0 !important;

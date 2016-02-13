@@ -1,4 +1,13 @@
 
+$.ajax({
+  method: "GET",
+  url: "questions/index"
+}).done(function( data ) {
+    console.log( "Data Saved: " + data );
+  });
+
+
+
 $('#exampleModal').on('show.bs.modal', function (event) {
   var button = $(event.relatedTarget) // Button that triggered the modal
   var recipient = button.data('whatever') // Extract info from data-* attributes
@@ -17,6 +26,10 @@ $('#message-text').val("");
 	console.log(quest);
 	modal.toggle();
 	
+$('.element').click(function(){
+	$('#right_panel').toggle();
+});
+
 
 var Question = React.createClass({
 	getDefaultProps : function() {

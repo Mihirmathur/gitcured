@@ -8,7 +8,7 @@ module.exports = {
       if (err) {
         console.log("Error getting all questions: ", err);
       } else {
-        res.JSON(results);
+        res.json(results);
       }
     })
   },
