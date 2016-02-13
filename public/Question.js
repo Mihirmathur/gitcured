@@ -26,7 +26,7 @@ $('#exampleModal').on('show.bs.modal', function (event) {
   var modal = $(this)
   modal.find('.modal-title').text('New question ')
   modal.find('.modal-body input').val(recipient)
-  $('#post').click(function(){
+  $('#post').one("click", function(){
   	var quest= $('#message-text').val();
   	var t1=$('#tg1').val();
   	var t2=$('#tg2').val();
@@ -44,7 +44,7 @@ $('#exampleModal').on('show.bs.modal', function (event) {
 
   		$.ajax({
   			method: "POST",
-  			url: "questions/create",
+  			url: "/question/create",
   			data: q
   		}).done(function(response){
   			if(ok==true){
@@ -57,36 +57,12 @@ $('#exampleModal').on('show.bs.modal', function (event) {
   			$('#right_panel').toggle();
   		});
 
+  		$('#questions').append('<li>'+
+  			'<div class="votes"><a class="uparrow">&uarr;</a><div>1010</div></div>'+
+  			'<div class="element"><a>'+quest+'</a><div><a>asked by'+user_logged+'</a> <a>discuss</a><a>'+
+  			'save</a><a>share</a><ul class="tags"><li><a>#'+t1+'</a></li>'+'<li><a>'+t2+'</a></li></ul></div></li>'
+  			);
 
-  		var Question = React.createClass({
-  			getDefaultProps : function() {
-  				return {question : quest,
-  					tag1: t1,
-  					tag2: t2};
-  				},
-  				render: function(){
-  					return <li>
-  					<div className="votes"><a className="uparrow">&uarr;</a><div>1010</div></div>
-  					<div className="element">
-  					<a>{this.props.question}</a>
-  					<div>
-  					<a>asked by {this.props.user}</a>
-  					<a>discuss</a>
-  					<a>save</a>
-  					<a>share</a>
-  					<ul className="tags">
-  					<li><a>#{this.props.tag1}</a></li>
-  					<li><a>#{this.props.tag2}</a></li>	
-  					</ul>
-  					</div>
-  					</div>
-  					</li>;
-  				}
-  			});
 
-  		ReactDOM.render(<ul id='questions'>
-  			<Question/> 
-  			</ul>, document.getElementById('question')); 
   		});
-
-  	});
+});

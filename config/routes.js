@@ -31,7 +31,7 @@ module.exports = function(app) {
   })
   app.post('/question/create', function(req, res) {
     console.log("post request to /question/add ", req.body);
-    // questions.create(req, res);
+    questions.create(req, res);
   })
   app.post('/question/upvote', function(req, res) {
     console.log("post request to /question/upvote ", req.body);
