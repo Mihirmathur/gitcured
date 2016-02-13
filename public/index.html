@@ -22,12 +22,16 @@
     <script type="text/jsx" src="/Header.js"></script>
     <script type="text/jsx" src="/Searchbar.js"></script>
     <script type="text/javascript" src="modal.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      var socket = io();
+    </script>
 </head>
 <body>
     <div id="contain">
         <div id="head"></div>
-        <center>  
-            <h4>which disease are you looking for?</h4>  
+        <center>
+            <h4>which disease are you looking for?</h4>
             <div id='sear'>
             </div>
         </center>

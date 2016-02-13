@@ -5,8 +5,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 // var session = require('express-session');
 var passport = require('passport');
-
-
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
 
 
 app.use(express.static(path.join(__dirname, './public')));
@@ -24,6 +24,16 @@ app.use(passport.session());
 require('./config/mongoose.js');
 require('./config/routes.js')(app);
 
-app.listen(8000, function() {
+
+io.on('connection', function(socket) {
+  console.log('a user connected: ');
+  socket.on('disconnect', function() {
+    console.log('a user disconnected');
+  })
+})
+
+
+
+http.listen(8000, function() {
     console.log("Server up and running on port 8000");
 })
