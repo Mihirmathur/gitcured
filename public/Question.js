@@ -45,7 +45,7 @@ $('#exampleModal').on('show.bs.modal', function (event) {
   		$.ajax({
   			method: "POST",
   			url: "questions/create",
-  			data: q;
+  			data: q
   		}).done(function(response){
   			if(ok==true){
 
