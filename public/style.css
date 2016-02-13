@@ -26,8 +26,13 @@
 
 #sear{
 	margin-top:200px;
-}
 
+}
+#bar{
+	-webkit-box-shadow: 7px 0px 0px 0px rgba(0,0,0,0.5);
+-moz-box-shadow: 7px 0px 0px 0px rgba(0,0,0,0.5);
+box-shadow: 7px 0px 0px 0px rgba(0,0,0,0.5);
+}
 body{
 	background-color: #fff2f2 !important;
 }
@@ -65,6 +70,7 @@ body{
 	background-color: white;
 	border-bottom: solid 10px #e93432;
 	margin-top: 50px;
+	
 }
 
 .form_cont{
@@ -83,4 +89,8 @@ body{
 	border-left: none;
 	border-top: none;
 	width: 100%;
+}
+
+#foot{
+	height: 100px;
 }
