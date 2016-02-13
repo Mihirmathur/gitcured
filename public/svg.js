@@ -94,5 +94,3 @@ var pathObj = {
     "strokeColor": "#e09b99"
 }).lazylinepainter('paint'); 
  });
-
- 
