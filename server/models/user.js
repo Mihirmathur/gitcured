@@ -5,9 +5,10 @@ var Schema = mongoose.Schema;
 var Userschema = new Schema({
   _questionsUpVote: [{type: Schema.ObjectId, ref: 'Questions'}],
   _questions: [{type: Schema.ObjectId, ref: 'Questions'}],
-  email: String,
+  name: String,
+  username: { type: String, unique: true},
   password: String,
-  age_range: Number,
+  age: Number,
   created_at: {type: Date, default: Date.now},
   updated_at: {type: Date, default: Date.now}
 });
