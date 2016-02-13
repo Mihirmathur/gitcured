@@ -25,15 +25,6 @@ require('./config/mongoose.js');
 require('./config/routes.js')(app);
 
 
-io.on('connection', function(socket) {
-  console.log('a user connected: ');
-  socket.on('disconnect', function() {
-    console.log('a user disconnected');
-  })
-})
-
-
-
 http.listen(8000, function() {
     console.log("Server up and running on port 8000");
 })
