@@ -83,6 +83,7 @@ header #user > a {
 }
 
 header #search {
+	display:block;
 	color:#FFF;
 	height:40px;
 	margin:0 auto;
@@ -92,6 +93,7 @@ header #search {
 	background-color:#C21B19;
 	padding:8px;
 	border-radius:4px;
+	cursor:text;
 }
 
 #search > input {
@@ -104,6 +106,7 @@ header #search {
 	width:100%;
 	font-size:18px;
 	text-align:center;
+	font-weight:400;
 }
 
 #search > input::-webkit-input-placeholder { color: rgba(255, 255, 255, 0.5); }
@@ -369,6 +372,12 @@ section.chat .conversation {
 	left:0;
 	right:0;
 	bottom:50px;
+}
+
+section.chat .conversation li:after {
+	content:'';
+	display:block;
+	clear:both;
 }
 
 section.chat .conversation .time {

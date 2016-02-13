@@ -8,13 +8,13 @@ $.ajax({
 });
 
 var user_logged;
-$.ajax({
-	method: "GET",
-	url: "/user"
-}).done(function(data){
-	user_logged=data;
-	console.log(data);
-});
+// $.ajax({
+// 	method: "GET",
+// 	url: "/user"
+// }).done(function(data){
+// 	user_logged=data;
+// 	console.log(data);
+// });
  
 
 

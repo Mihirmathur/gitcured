@@ -24,9 +24,9 @@
 		<div id="user"><a id="username"><!--Add username here--></a>
 		<a href="/logout">&nbsp;<button class="btn btn-default" id="logout" >Logout</button></a></div>
 
-		<div id="search">
-			<input type="input" placeholder="diabetes, cardiovascular disease, asthma" value="diabetes">
-		</div>
+		<label id="search" for="search_input">
+			<input type="input" id="search_input" placeholder="diabetes, cardiovascular disease, asthma" value="diabetes">
+		</label>
 	</header>
 	<main>
 		<section id="left_panel">
@@ -46,16 +46,10 @@
 					<div class="chathead">
 						<div class="section_title">This is a question?</div>
 						<div class="section_subtitle">asked by <a>ineedhelp</a></div>
-
 					</div>
 				</li>
 				<li><div class="conversation">
-					<ul>
-						<li>
-							<div class="time">9:00 PM</div>
-							<div class="message"><a class="user">ineedhelp</a> some message here.</div>
-						</li>
-					</ul>
+					<ul></ul>
 				</div></li>
 				<li><div class="inputbox"><div class="textarea_wrap"><textarea></textarea></div></div></li>
 			</ul>
@@ -102,5 +96,7 @@
 		</section>
 
 	</main>
+<script src="/socket.io/socket.io.js"></script>
+<script src="chat.js"></script>
 </body>
 </html>
