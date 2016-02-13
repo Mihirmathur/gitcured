@@ -1,0 +1,24 @@
+{
+  "name": "treehacks-health",
+  "version": "0.0.1",
+  "description": "Crowdsource questions for treehacks hackathon",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mihirmathur/treehacks-health.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mihirmathur/treehacks-health/issues"
+  },
+  "homepage": "https://github.com/Mihirmathur/treehacks-health#readme",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "mongoose": "^4.4.3"
+  }
+}
