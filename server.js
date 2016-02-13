@@ -12,7 +12,6 @@ var MongoStore = require('connect-mongo')(session);
 var uuid = require('node-uuid');
 
 
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cookieParser('TreeHacks'));
@@ -49,7 +48,7 @@ io.on('connection', function (socket) {
 		console.log("message has emitted")
 		var d = new Date()
 		var data_message = {
-			username: "somebody",
+			username: data.userid,
 			timestamp: d.toLocaleTimeString().replace(/(.*)\D\d+/, '$1'),
 			message: data.message
 		}
