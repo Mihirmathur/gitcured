@@ -45,5 +45,15 @@ module.exports = {
         res.redirect('/search')
       }
     })
+  },
+  find: function(req, res) {
+    User.findOne({username: req.session.passport.user.username}, function(err, user) {
+      if (err) {
+        console.log("Errror getting the user: ", err);
+      } else {
+        console.log("Succesfully found the user");
+        res.json(user);
+      }
+    })
   }
 }

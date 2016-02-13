@@ -40,6 +40,29 @@ app.use(express.static(path.join(__dirname, './public')));
 require('./config/mongoose.js');
 require('./config/routes.js')(app);
 
+var numUsers = 0;
+
+io.on('connection', function (socket) {
+	console.log("a user has connected")
+
+	socket.on('new message', function(data){
+		socket.broadcast.emit('new message', {
+			username: "somebody",
+			message: data
+		})
+	})
+
+	socket.on('add user', function(username) {
+		if (addedUser) return;
+		++numUsers;
+	})
+
+	socket.on('disconnect', function(){
+		console.log("a user has disconnected")
+		--numUsers;
+	})
+})
+
 
 http.listen(8000, function() {
     console.log("Server up and running on port 8000");
