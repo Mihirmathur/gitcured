@@ -26,4 +26,8 @@ module.exports = function(app) {
     console.log("post request to /question/upvote ", req.body);
     questions.upVote(req, res);
   })
+  app.post('/chat/post',function(req, res){
+    console.log("chat request has been made", req.body)
+    questions.chat(req, res);
+  })
 }
