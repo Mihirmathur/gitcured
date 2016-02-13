@@ -37,9 +37,9 @@ $('#exampleModal').on('show.bs.modal', function (event) {
   	modal.toggle();
 
   	q=[{user: user_logged, 
-  		ques: quest, 
-  		tag1: t1, 
-  		tag2: t2 }
+  		question: quest, 
+  		tags: [t1,t2] 
+  		  }
   		];
 
   		$.ajax({
