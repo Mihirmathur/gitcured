@@ -6,149 +6,98 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<link rel="stylesheet" type="text/css" href="main.css"/>
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<script src="https://fb.me/react-0.14.7.js"></script>
+	<script src="https://fb.me/react-dom-0.14.7.js"></script>
+	<script src="https://fb.me/JSXTransformer-0.13.3.js"></script>
+	<script type="text/javascript" src="/modal.js"></script>
+	<script type="text/jsx" src="/Question.js"></script>
+	
 </head>
 <body>
 
-<header>
+	<header>
 
-	<div id="logo">Healthify</div>
-	<div id="user"><a>mihirmathur</a></div>
+		<div id="logo">Healthify</div>
+		<div id="user"><a id="username">mihirmathur</a></div>
 
-	<div id="search">
-		<input type="input" placeholder="diabetes, cardiovascular disease, asthma" value="diabetes">
-	</div>
+		<div id="search">
+			<input type="input" placeholder="diabetes, cardiovascular disease, asthma" value="diabetes">
+		</div>
 
-</header>
+	</header>
 
-<main>
+	<main>
 
-	<section id="left_panel">
-		<nav>
-			<ul>
-				<li class="on"><a>Questions</a></li>
-				<li><a>General discussion</a></li>
-				<li><a>Learn more</a></li>
-				<li><a>Data visualization</a></li>
-			</ul>
-		</nav>
-		<div class="section_title">Tags</div>
-	</section>
-
-	<section id="right_panel" class="chat">
-		<ul>
-			<li>
-				<div class="chathead">
-					<div class="section_title">This is a question?</div>
-					<div class="section_subtitle">asked by <a>ineedhelp</a></div>
-				</div>
-			</li>
-			<li><div class="conversation">
+		<section id="left_panel">
+			<nav>
 				<ul>
-					<li>
-						<div class="time">9:00 PM</div>
-						<div class="message"><a class="user">ineedhelp</a> some message here.</div>
-					</li>
+					<li class="on"><a>Questions</a></li>
+					<li><a>General discussion</a></li>
+					<li><a>Learn more</a></li>
+					<li><a>Data visualization</a></li>
 				</ul>
-			</div></li>
-			<li><div class="inputbox"><div class="textarea_wrap"><textarea></textarea></div></div></li>
-		</ul>
-	</section>
+			</nav>
+			<div class="section_title">Tags</div>
+		</section>
 
-	<section id="mid_panel">
-		<section>
-			<a class="button right">Submit a question</a>
-			<div class="section_title">Questions to ask your physician</div>
-			<ul id="questions">
+		<section id="right_panel" class="chat">
+			<ul>
 				<li>
-					<div class="votes"><a class="uparrow">&uarr;</a><div>1010</div></div>
-					<div class="element">
-						<a>This is a question?</a>
-						<div>
-							<a>asked by ineedhelp</a>
-							<a>discuss</a>
-							<a>save</a>
-							<a>share</a>
-							<ul class="tags">
-								<li><a>#tag1</a></li>
-								<li><a>#tag2</a></li>
-								<li><a>#tag3</a></li>
-							</ul>
-						</div>
+					<div class="chathead">
+						<div class="section_title">This is a question?</div>
+						<div class="section_subtitle">asked by <a>ineedhelp</a></div>
 					</div>
 				</li>
-				<li>
-					<div class="votes"><a class="uparrow">&uarr;</a><div>1010</div></div>
-					<div class="element">
-						<a>This is a question?</a>
-						<div>
-							<a>asked by ineedhelp</a>
-							<a>discuss</a>
-							<a>save</a>
-							<a>share</a>
-							<ul class="tags">
-								<li><a>#tag1</a></li>
-								<li><a>#tag2</a></li>
-								<li><a>#tag3</a></li>
-							</ul>
-						</div>
-					</div>
-				</li>
-				<li>
-					<div class="votes"><a class="uparrow">&uarr;</a><div>1010</div></div>
-					<div class="element">
-						<a>This is a question?</a>
-						<div>
-							<a>asked by ineedhelp</a>
-							<a>discuss</a>
-							<a>save</a>
-							<a>share</a>
-							<ul class="tags">
-								<li><a>#tag1</a></li>
-								<li><a>#tag2</a></li>
-								<li><a>#tag3</a></li>
-							</ul>
-						</div>
-					</div>
-				</li>
-				<li>
-					<div class="votes"><a class="uparrow">&uarr;</a><div>1010</div></div>
-					<div class="element">
-						<a>This is a question?</a>
-						<div>
-							<a>asked by ineedhelp</a>
-							<a>discuss</a>
-							<a>save</a>
-							<a>share</a>
-							<ul class="tags">
-								<li><a>#tag1</a></li>
-								<li><a>#tag2</a></li>
-								<li><a>#tag3</a></li>
-							</ul>
-						</div>
-					</div>
-				</li>
-				<li>
-					<div class="votes"><a class="uparrow">&uarr;</a><div>1010</div></div>
-					<div class="element">
-						<a>This is a question?</a>
-						<div>
-							<a>asked by ineedhelp</a>
-							<a>discuss</a>
-							<a>save</a>
-							<a>share</a>
-							<ul class="tags">
-								<li><a>#tag1</a></li>
-								<li><a>#tag2</a></li>
-								<li><a>#tag3</a></li>
-							</ul>
-						</div>
-					</div>
-				</li>
+				<li><div class="conversation">
+					<ul>
+						<li>
+							<div class="time">9:00 PM</div>
+							<div class="message"><a class="user">ineedhelp</a> some message here.</div>
+						</li>
+					</ul>
+				</div></li>
+				<li><div class="inputbox"><div class="textarea_wrap"><textarea></textarea></div></div></li>
 			</ul>
 		</section>
-	</section>
+		<section id="mid_panel">
+			<section>
+			<button class="button right" type="button"  data-toggle="modal" data-target="#exampleModal">Submit a question</button>
+				<div class="section_title">Questions to ask your physician</div>
+				<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+								<h4 class="modal-title" id="exampleModalLabel">New Question</h4>
+							</div>
+							<div class="modal-body">
+								<form>
+									<div class="form-group">
+										<label for="message-text" class="control-label">Question:</label>
+										<textarea class="form-control" id="message-text"></textarea>
+									</div>
+								</form>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+								<button type="button" class="btn btn-primary">Send message</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<ul id="question">
+				</ul>
+			</section>
+		</section>
 
-</main>
+	</main>
 
 </body>
 </html>

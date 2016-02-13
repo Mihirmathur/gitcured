@@ -57,7 +57,7 @@ header {
 	color:#FFF;
 	padding:16px 24px;
 	font-weight:500;
-	height:40px;
+	height:60px;
 }
 
 header #logo {
@@ -83,7 +83,7 @@ header #user > a {
 
 header #search {
 	color:#FFF;
-	height:24px;
+	height:35px;
 	margin:0 auto;
 	width:auto;
 	overflow:hidden;
@@ -109,6 +109,9 @@ header #search {
 
 input:-moz-placeholder { color: rgba(255, 255, 255, 0.5); }
 
+#username{
+	color: white;
+}
 
 main {
 	left:0;right:0;bottom:0;
@@ -181,17 +184,21 @@ main > section {
 	display:inline-block;
 	margin-right:16px;
 	margin-left:0;
+	background-color: white;
 }
 
 .button:hover {
 	color:#FFF;
 	background-color:#e93432;
+	text-decoration: none;
 }
 
 .button.right {
 	float:right;
 	margin-left:16px;
 	margin-right:0;
+	text-decoration: none;
+
 }
 
 nav {
@@ -216,6 +223,10 @@ nav li a {
 
 nav li a:hover {
 	background-color:#fff2f2;
+}
+
+.modal-backdrop{
+	position: relative !important;
 }
 
 #questions {
