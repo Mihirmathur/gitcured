@@ -11,7 +11,7 @@ img { border: none; max-width: 100%; vertical-align: middle; margin: 0 auto; pad
 
 table { border-collapse: collapse; border-spacing: 0; }
 
-body { font-family: Avenir, HelveticaNeue, "Helvetica Neue", Helvetica, Arial, Avenir, Verdana, Sans-serif; font-size: 13px; line-height: 1.4em; font-weight: 400; color: #000; background-color: #FFF; background-attachment: fixed; background-size: cover; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; -webkit-text-size-adjust: 100%; position: absolute; left: 0; right: 0; top: 0; bottom: 0; max-width: 2000px; margin: 0 auto; }
+body { font-family: Avenir, HelveticaNeue, "Helvetica Neue", Helvetica, Arial, Avenir, Verdana, Sans-serif; font-size: 14px; line-height: 1.4em; font-weight: 400; color: #000; background-color: #FFF; background-attachment: fixed; background-size: cover; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; -webkit-text-size-adjust: 100%; position: absolute; left: 0; right: 0; top: 0; bottom: 0; max-width: 2000px; margin: 0 auto; }
 
 p { padding-bottom: 1em; display: block; line-height: 1.4em; }
 
@@ -107,16 +107,73 @@ input:-moz-placeholder { color: rgba(255, 255, 255, 0.5); }
 
 
 main {
-	margin-top:72px;
-	position:relative;
+	left:0;right:0;bottom:0;
+	top:72px;
+	position:fixed;
+}
+
+main > section {
+	overflow:hidden;
 }
 
 #left_panel {
-	position
-	width:14px;
+	height:100%;
+	width:140px;
 	padding:16px;
+	float:left;
+}
+
+#left_panel > .section_title {
+	text-transform: uppercase;
+	font-size:10px;
+	color:rgba(0,0,0,0.5);
+}
+
+#mid_panel {
+	height:100%;
+	width:auto;
+	overflow:auto;
+	padding:24px;
+}
+
+#right_panel {
+	height:100%;
+	width: 200px;
+	overflow:auto;
 }
 
 .section_title {
 	font-weight:bold;
+	font-size:24px;
+	line-height:1em;
+}
+
+nav {
+	padding-bottom:16px;
+}
+
+nav li.on a {
+	font-weight:900;
+	background-color:#FAD2D2 !important;
+	color:#800100;
+}
+
+nav li a {
+	display:block;
+	text-decoration:none;
+	font-size:15px;
+	padding:4px 4px 4px 16px;
+	margin:0 -4px 0 -16px;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius:3px;
+}
+
+nav li a:hover {
+	background-color:#fff2f2;
+}
+
+#questions > li > .votes {
+	float:left;
+	width:50px;
+	text-align:center;
 }
