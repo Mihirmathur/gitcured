@@ -15,7 +15,7 @@ var Hello = React.createClass({
   	    	<div className="col-md-3 top">
   	    		<input type="password" className="form-control" id="InputPassword" placeholder="password" name="password"></input>
   	    	</div>
-          <input type="submit" value="Submit"></input>
+          <button type="submit" value="Submit"></button>
   	    </div>
       </form>
     </nav>
