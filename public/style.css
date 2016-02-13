@@ -72,6 +72,15 @@ body{
 }
 
 .prompt{
-	font-size: 1.2em;
+	font-size: 1em;
 	font-weight: bolder;
+	float: right;
+}
+
+.form_input{
+	border-bottom: 1px solid #e93432;
+	border-right: none;
+	border-left: none;
+	border-top: none;
+	width: 100%;
 }
