@@ -16,25 +16,17 @@
 	<script src="https://fb.me/react-0.14.7.js"></script>
 	<script src="https://fb.me/react-dom-0.14.7.js"></script>
 	<script src="https://fb.me/JSXTransformer-0.13.3.js"></script>
-	<script type="text/javascript" src="/modal.js"></script>
 	<script type="text/jsx" src="/Question.js"></script>
-	
 </head>
 <body>
-
 	<header>
-
 		<div id="logo">Healthify</div>
 		<div id="user"><a id="username">mihirmathur</a></div>
-
 		<div id="search">
 			<input type="input" placeholder="diabetes, cardiovascular disease, asthma" value="diabetes">
 		</div>
-
 	</header>
-
 	<main>
-
 		<section id="left_panel">
 			<nav>
 				<ul>
@@ -46,7 +38,6 @@
 			</nav>
 			<div class="section_title">Tags</div>
 		</section>
-
 		<section id="right_panel" class="chat">
 			<ul>
 				<li>
@@ -68,7 +59,7 @@
 		</section>
 		<section id="mid_panel">
 			<section>
-			<button class="button right" type="button"  data-toggle="modal" data-target="#exampleModal">Submit a question</button>
+				<button class="button right" type="button"  data-toggle="modal" data-target="#exampleModal">Submit a question</button>
 				<div class="section_title">Questions to ask your physician</div>
 				<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
 					<div class="modal-dialog" role="document">
@@ -83,11 +74,21 @@
 										<label for="message-text" class="control-label">Question:</label>
 										<textarea class="form-control" id="message-text"></textarea>
 									</div>
+
+									<div class="col-xs-2">
+									<label for="ex1">Tag Disease</label>
+										<input class="form-control" id="tg1" type="text">
+									</div>
+									<div class="col-xs-2">
+									<label for="ex1">Tag Disease</label>
+										<input class="form-control" id="tg2" type="text">
+									</div>
 								</form>
+
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-								<button type="button" class="btn btn-primary">Send message</button>
+								<button type="button" id="post" class="btn btn-primary">Post Question</button>
 							</div>
 						</div>
 					</div>
@@ -98,6 +99,5 @@
 		</section>
 
 	</main>
-
 </body>
 </html>

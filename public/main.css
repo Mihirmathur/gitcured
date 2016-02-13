@@ -167,6 +167,7 @@ main > section {
 .section_subtitle a {
 	text-decoration: none;
 	font-weight:800;
+	-webkit-transition: .2s ease all;
 }
 
 .section_subtitle a:hover {
@@ -185,6 +186,7 @@ main > section {
 	margin-right:16px;
 	margin-left:0;
 	background-color: white;
+	-webkit-transition: .2s ease all;
 }
 
 .button:hover {
@@ -253,6 +255,7 @@ nav li a:hover {
 	width:50px;
 	text-align:center;
 	vertical-align:top;
+	-webkit-transition: .2s ease all;
 }
 
 #questions > li > .votes > a {
@@ -263,6 +266,7 @@ nav li a:hover {
 	display:block;
 	padding-top:4px;
 	text-decoration: none;
+	-webkit-transition: .2s ease all;
 }
 
 #questions > li > .votes > a:hover {
