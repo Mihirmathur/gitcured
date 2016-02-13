@@ -7,6 +7,10 @@ $.ajax({
   });
 
 
+var q=[{user: username, ques: "hey", tag1: "abc", tag2: " " }];
+
+
+
 
 $('#exampleModal').on('show.bs.modal', function (event) {
   var button = $(event.relatedTarget) // Button that triggered the modal
@@ -39,6 +43,7 @@ var Question = React.createClass({
 			tag2: t2};
 	},
 	render: function(){
+		q.push(user: );
 		return <li>
 				<div className="votes"><a className="uparrow">&uarr;</a><div>1010</div></div>
 					<div className="element">
