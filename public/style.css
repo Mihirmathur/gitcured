@@ -33,6 +33,10 @@
 -moz-box-shadow: 7px 0px 0px 0px rgba(0,0,0,0.5);
 box-shadow: 7px 0px 0px 0px rgba(0,0,0,0.5);
 }
+#svg1{
+	height:100px;
+	width:100px;
+}
 body{
 	background-color: #fff2f2 !important;
 }

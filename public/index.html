@@ -1,32 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title> Treehacks | Health </title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="AirBnb Clone">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+  <title> Treehacks | Health </title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="AirBnb Clone">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    <link rel='stylesheet' href='/style.css' />
-    <link rel='stylesheet' href='/main.css' />
-    <script src="https://fb.me/react-0.14.7.js"></script>
-    <script src="https://fb.me/react-dom-0.14.7.js"></script>
-    <script src="https://fb.me/JSXTransformer-0.13.3.js"></script>
-    <script type="text/jsx" src="/Header.js"></script>
-    <script type="text/jsx" src="/Searchbar.js"></script>
-    <script src="/socket.io/socket.io.js"></script>
-    <script>
-      var socket = io();
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <link rel='stylesheet' href='/style.css' />
+  <link rel='stylesheet' href='/main.css' />
+  <script src="https://fb.me/react-0.14.7.js"></script>
+  <script src="https://fb.me/react-dom-0.14.7.js"></script>
+  <script src="https://fb.me/JSXTransformer-0.13.3.js"></script>
+  <script type="text/javascript" src="/jquery.lazylinepainter-1.7.0.min.js"></script>
+  <script type="text/javascript" src="/svg.js"></script>
+  <script type="text/jsx" src="/Header.js"></script>
+  <script type="text/jsx" src="/Searchbar.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+  var socket = io();
   </script>
 </head>
 <body>
+
     <div id="contain">
         <div id="head"></div>
         <center>
@@ -36,50 +39,50 @@
         </center>
         <br><br><br><br><br><br>
         <div class="d3">
-            <img id="d3img" src="http://www.swissnexsanfrancisco.org/wp-content/uploads/sites/6/2014/07/Social_Network_Analysis_Visualization-1170x600.png">
+        <div id="undefined"></div>
         </div>
         <div id="signup">
             <center>
 
-                <div id="form">
-                    <div class="form_cont col-md-12">
-                        <center><h5>Signup</h5></center><br><br>
-                        <div class="col-md-4">
-                            <span class="prompt">NAME:</span>
-                        </div>
-                        <div class="col-md-7">
-                         <input id="name" class="form_input" placeholder="Firstname Lastname"></input>
-                     </div>
-                     <br><br><br>
-                     <div class="col-md-4">
-                        <span class="prompt"class="form_input">AGE:</span>
-                    </div>
-                    <div class="col-md-7">
-                     <input id="age" class="form_input" placeholder="42"></input>
-                 </div>
-                 <br><br><br>
-                 <div class="col-md-4">
-                    <span class="prompt" class="form_input">EMAIL:</span>
-                </div>
-                <div class="col-md-7">
-                 <input id="email" class="form_input" placeholder="yourname@gmail.com"></input>
-             </div>
-             <br><br><br>
-             <div class="col-md-4">
-                <span class="prompt" class="form_input">PASSWORD:</span>
+
+        <div id="form">
+          <div class="form_cont col-md-12">
+            <center><h5>Signup</h5></center><br><br>
+            <div class="col-md-4">
+              <span class="prompt">NAME:</span>
             </div>
             <div class="col-md-7">
-             <input id="email" class="form_input" placeholder="**********"></input>
-         </div>
-         <br><br>
-         <button type="button" class="btn btn-danger">Sign-Up</button>
-     </div>
- </div>
-</center>
-</div>
-</div>
-<div id="foot">
-</div>
-
+              <input type="text" id="name" class="form_input" placeholder="Firstname Lastname" name="name"></input>
+            </div>
+            <br><br><br>
+            <div class="col-md-4">
+              <span class="prompt"class="form_input">AGE:</span>
+            </div>
+            <div class="col-md-7">
+              <input type="number" id="age" class="form_input" placeholder="42" name="age"></input>
+            </div>
+            <br><br><br>
+            <div class="col-md-4">
+              <span class="prompt" class="form_input">EMAIL:</span>
+            </div>
+            <div class="col-md-7">
+              <input type="email" id="email" class="form_input" placeholder="yourname@gmail.com" name="username"></input>
+            </div>
+            <br><br><br>
+            <div class="col-md-4">
+              <span class="prompt" class="form_input">PASSWORD:</span>
+            </div>
+            <div class="col-md-7">
+              <input id="email" type="password" class="form_input" placeholder="**********" name="password"></input>
+            </div>
+            <br><br>
+            <button type="submit" class="btn btn-danger">Sign-Up</button>
+          </div>
+        </div>
+      </center>
+    </div>
+  </div>
+  <div id="foot">
+  </div>
 </body>
 </html>

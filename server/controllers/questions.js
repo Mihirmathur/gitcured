@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 var Questions = mongoose.model('Questions');
 var Users = mongoose.model('Users');
+var Chat = mongoose.model('Chat');
 
 module.exports = {
   index: function(req, res) {
@@ -8,7 +9,7 @@ module.exports = {
       if (err) {
         console.log("Error getting all questions: ", err);
       } else {
-        res.JSON(results);
+        res.json(results);
       }
     })
   },
@@ -46,5 +47,21 @@ module.exports = {
           }
         })
     })
+  },
+  chat: function(req, res) {
+    var chat = new Chat(req.body.chat);
+    console.log(req.body);
+    // req.body = {""}
+    Question.findOne({_id: req.body.question._id}, function(err, question){
+      User.findOne({_id: req.body.user._id},function(err, user) {
+        if(err){
+          console.log("ERROR", error);
+        } else {
+          question.chat.push(chat);
+        }
+      })
+    })
+
+
   }
 }
