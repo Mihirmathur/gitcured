@@ -25,7 +25,8 @@ $('#tg2').val("");
 $('#message-text').val("");
 	console.log(quest);
 	modal.toggle();
-	
+
+var q=[{user: username, ques: "hey", tag1: "abc", tag2: " " }];	
 $('.element').click(function(){
 	$('#right_panel').toggle();
 });
