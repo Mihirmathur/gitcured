@@ -51,9 +51,27 @@ body{
 }
 .d3{
 	background-color: white;
-	height: 600px;
+	height: 400px;
 }
 
 #d3img{
 	height: 200px;
+}
+
+#form{
+	margin-top: 100px;
+	width: 600px;
+	height: 400px;
+	background-color: white;
+	border-bottom: solid 10px #e93432;
+	margin-top: 50px;
+}
+
+.form_cont{
+	margin-top: 50px;
+}
+
+.prompt{
+	font-size: 1.2em;
+	font-weight: bolder;
 }

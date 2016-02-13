@@ -17,24 +17,60 @@
     <link rel='stylesheet' href='/style.css' />
     <link rel='stylesheet' href='/main.css' />
     <script src="https://fb.me/react-0.14.7.js"></script>
-<script src="https://fb.me/react-dom-0.14.7.js"></script>
+    <script src="https://fb.me/react-dom-0.14.7.js"></script>
     <script src="https://fb.me/JSXTransformer-0.13.3.js"></script>
     <script type="text/jsx" src="/Header.js"></script>
     <script type="text/jsx" src="/Searchbar.js"></script>
 </head>
 <body>
     <div id="contain">
-    <div id="head"></div>
+        <div id="head"></div>
         <center>  
-        <h4>which disease are you looking for?</h4>  
-        <div id='sear'>
-        </div>
+            <h4>which disease are you looking for?</h4>  
+            <div id='sear'>
+            </div>
         </center>
         <br><br><br><br><br><br>
         <div class="d3">
-        <img id="d3img" src="http://www.swissnexsanfrancisco.org/wp-content/uploads/sites/6/2014/07/Social_Network_Analysis_Visualization-1170x600.png">
+            <img id="d3img" src="http://www.swissnexsanfrancisco.org/wp-content/uploads/sites/6/2014/07/Social_Network_Analysis_Visualization-1170x600.png">
         </div>
-    </div>
- 
+        <div id="signup">
+            <center>
+
+                <div id="form">
+                    <div class="form_cont col-md-12">
+                        <div class="col-md-4">
+                            <span class="prompt">NAME:</span>
+                        </div>
+                        <div class="col-md-8">
+                           <input id="name" class="form_input" placeholder="Firstname Lastname"></input>
+                       </div>
+                       <br><br>
+                       <div class="col-md-4">
+                            <span class="prompt"class="form_input">AGE:</span>
+                        </div>
+                        <div class="col-md-8">
+                           <input id="age" class="form_input" placeholder="42"></input>
+                       </div>
+                       <br><br>
+                       <div class="col-md-4">
+                            <span class="prompt" class="form_input">EMAIL:</span>
+                        </div>
+                        <div class="col-md-8">
+                           <input id="email" class="form_input" placeholder="yourname@gmail.com"></input>
+                       </div>
+                       <br><br>
+                       <div class="col-md-4">
+                            <span class="prompt" class="form_input">PASSWORD:</span>
+                        </div>
+                        <div class="col-md-8">
+                           <input id="email" class="form_input" placeholder="**********"></input>
+                       </div>
+                   </div>
+               </div>
+           </center>
+       </div>
+   </div>
+
 </body>
 </html>
