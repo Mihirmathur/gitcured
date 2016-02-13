@@ -19,8 +19,10 @@ function sendMessage (message) {
 		console.log("warning not connected");
 	}
 
-	if(message && connected) 
-		socket.emit('new message', {message: message});
+	$.get("/user", function(data){
+		if(message && connected) 
+			socket.emit('new message', {message: message, userid: data.name});
+	});
 }
 
 function addChatMessage (data, options){

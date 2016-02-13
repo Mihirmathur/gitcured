@@ -47,7 +47,7 @@ module.exports = {
     })
   },
   find: function(req, res) {
-    User.findOne({username: req.session.passport.user.username}, function(err, user) {
+    Users.findOne({username: req.session.passport.user.username}, function(err, user) {
       if (err) {
         console.log("Errror getting the user: ", err);
       } else {
