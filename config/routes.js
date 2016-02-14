@@ -3,7 +3,9 @@ var React = require('react');
 var users = require('./../server/controllers/users.js');
 var questions = require('./../server/controllers/questions.js');
 var passport = require('passport');
-var path = require('path')
+var path = require('path');
+var Client = require('node-wolfram');
+var Wolfram = new Client('233V33-5P5KV79UJK');
 
 
 module.exports = function(app) {
@@ -14,6 +16,9 @@ module.exports = function(app) {
     } else {
       res.redirect('/');
     }
+  })
+  app.get('/search/anonymous', function(req, res) {
+    res.sendFile(path.resolve('public/searchAnonymous.html'));
   })
   app.get('/matrix_diabetes.json', function(req, res) {
     res.sendfile('./server/render_data/matrix_diabetes.json')
@@ -40,8 +45,17 @@ module.exports = function(app) {
     questions.upVote(req, res);
   })
   app.post('/question/tags', function(req, res) {
-    console.log("post request to /question/tags: ", req.body);
-    // questions.tag(req, res);
+    // console.log("post request to /question/tags: ", req.body);
+    questions.tags(req, res);
+  })
+  app.post('/wolfram', function(req, res) {
+    Wolfram.query(req.body.input, function(err, result) {
+      if (err) {
+        console.log("Error getting query from wolfram", err);
+      } else {
+        res.json(result);
+      }
+    })
   })
   app.post('/chat/post',function(req, res){
     console.log("chat request has been made", req.body)

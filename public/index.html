@@ -20,8 +20,14 @@
   <script type="text/javascript" src="/jquery.lazylinepainter-1.7.0.min.js"></script>
   <script type="text/javascript" src="/svg.js"></script>
   <script type="text/jsx" src="/Searchbar.js"></script>
-</head>
-<head>
+  <script>
+  $(document).ready(function() {
+    $("#search").click(function() {
+      console.log("This fired");
+      location.href = 'http://localhost:8000/search/anonymous';
+    })
+  })
+  </script>
 </head>
 <body>
 
@@ -48,13 +54,13 @@
         <div id="steth"></div>
       </div>
       <div class="col-md-5 tex">
-        <p>Patients often do not know what questions to ask when they visit the doctor, or forget the ones they think of. 
+        <p>Patients often do not know what questions to ask when they visit the doctor, or forget the ones they think of.
         Gitcure provides a user-friendly and intuitive interface for engaging in discussions related to a plethora of diseases and thus better prepares the patients for <span class="red">getting cured</span>.
          </p>
         <p>So search for any symptom, drug, or disease, and take part in an ongoing conversation with patients all over the world just like you!</p>
       </div>
       <div class="col-md-3">
-        
+
       </div>
     </div>
   </section>
@@ -70,10 +76,10 @@
       <div class="col-md-5 tex">
         <p>Complete your list of recommended steps for diseases by interacting with people who were in the same situation as you getting cured.
          </p>
-       
+
       </div>
       <div class="col-md-3">
-        
+
       </div>
     </div>
   </section>

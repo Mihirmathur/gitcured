@@ -59,9 +59,9 @@ module.exports = {
     })
   },
   tags: function(req, res) {
-    Question.find({tags: {$contains: req.body.input}}, function(err, questions) {
+    Questions.find({tags: new RegExp(req.body.input)}, function(err, questions) {
       if (err) {
-        console.log("Error getting questions with matching tags");
+        console.log("Error getting questions with matching tags", err);
         res.end();
       } else {
         console.log("Succesfully got questions with mathing tags");

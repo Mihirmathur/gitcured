@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Diabetes - GitCured</title>
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" type="text/css" href="../main.css"/>
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<style>
+	#right_panel {
+		width: 0px;
+		-webkit-transition-duration: 3s;
+		transition-duration: 3s;
+	}
+	.loader {
+	  position: relative;
+	  width: 50px;
+	  margin: 100px auto;
+	}
+
+	.duo {
+	  height: 20px;
+	  width: 50px;
+	  background: hsla(0, 0%, 0%, 0.0);
+	  position: absolute;
+
+	}
+
+	.duo, .dot {
+	  animation-duration: 0.8s;
+	  animation-timing-function: ease-in-out;
+	  animation-iteration-count: infinite;
+	}
+
+	.duo1 {
+	  left: 0;
+	}
+
+	.duo2 {
+	  left: 30px
+	}
+
+
+	.dot {
+	  width: 20px;
+	  height: 20px;
+	  border-radius: 10px;
+	  background: #dd3f3f;
+	  position: absolute;
+	}
+
+	.dot-a {
+	  left: 0px;
+	}
+
+	.dot-b {
+	  right: 0px;
+	}
+
+
+	@keyframes spin {
+	    0% { transform: rotate(0deg) }
+	   50% { transform: rotate(180deg) }
+	  100% { transform: rotate(180deg) }
+	}
+
+	@keyframes onOff {
+	    0% { opacity: 0; }
+	   49% { opacity: 0; }
+	   50% { opacity: 1; }
+	  100% { opacity: 1; }
+	}
+
+	.duo1 {
+	  animation-name: spin;
+	}
+
+	.duo2 {
+	  animation-name: spin;
+	  animation-direction: reverse;
+	}
+
+	.duo2 .dot-b {
+	  animation-name: onOff;
+	}
+
+	.duo1 .dot-a {
+	  opacity: 0;
+	  animation-name: onOff;
+	  animation-direction: reverse;
+	}
+	</style>
+	<script>
+	$(document).ready(function() {
+
+			var user_logged;
+			var lastClickedQuestion;
+
+		function xmlToJson(xml) {
+
+		  // Create the return object
+		  var obj = {};
+
+		  if (xml.nodeType == 1) { // element
+		    // do attributes
+		    if (xml.attributes.length > 0) {
+		        obj["@attributes"] = {};
+		        for (var j = 0; j < xml.attributes.length; j++) {
+		            var attribute = xml.attributes.item(j);
+		            obj["@attributes"][attribute.nodeName] = attribute.nodeValue;
+		        }
+		    }
+		  } else if (xml.nodeType == 3) { // text
+		    obj = xml.nodeValue;
+		  }
+
+		  // do children
+		  if (xml.hasChildNodes()) {
+		    for (var i = 0; i < xml.childNodes.length; i++) {
+		        var item = xml.childNodes.item(i);
+		        var nodeName = item.nodeName;
+		        if (typeof(obj[nodeName]) == "undefined") {
+		            obj[nodeName] = xmlToJson(item);
+		        } else {
+		            if (typeof(obj[nodeName].push) == "undefined") {
+		                var old = obj[nodeName];
+		                obj[nodeName] = [];
+		                obj[nodeName].push(old);
+		            }
+		            obj[nodeName].push(xmlToJson(item));
+		        }
+		    }
+		  }
+		  return obj;
+		};
+
+		$("#search").focus();
+
+		$.ajax({
+			method: "GET",
+			url: "../questions/index"
+		}).done(function( quest_rec ) {
+
+			console.log( "Data Saved: ", quest_rec );
+			for (var i = quest_rec.length - 1; i >= 0; i--) {
+				var currentQuestion = quest_rec[i];
+				console.log("The current question: ", currentQuestion);
+				$('#questions').append('<li class="question-items">'+
+					'<div class="votes"><input type="hidden" value='+JSON.stringify(currentQuestion.tags)+'></input><input type="hidden" value='+currentQuestion._id+'></input><a class="uparrow">&uarr;</a><div>'+ currentQuestion.up_votes.length +'</div></div>'+
+					'<div class="element"><a>'+currentQuestion.question+'</a><div><a>asked by '+currentQuestion._user.name+'</a> <a>discuss</a><a>'+
+					'save</a><a>share</a><ul class="tags"><li><a>#'+currentQuestion.tags[0]+'</a></li>'+'<li><a>#'+currentQuestion.tags[1]+'</a></li></ul></div></li>'
+					);
+			}
+			$('.question-items').click(function() {
+				$(this).first()
+				console.log("The first child: ", $(this).first());
+			})
+		});
+
+		$("#search").keyup(function() {
+			$.ajax({
+				method: "POST",
+				url: '../question/tags',
+				data: { input: $('#search_input').val() }
+			}).done(function(response) {
+				console.log(response);
+				$('#questions').html("");
+				for (var i = response.length - 1; i >= 0; i--) {
+					var currentQuestion = response[i];
+					// console.log("The current question: ", currentQuestion);
+					$('#questions').append('<li class="question-items">'+
+						'<div class="votes"><input type="hidden" value='+JSON.stringify(currentQuestion.tags)+'></input><input type="hidden" value='+currentQuestion._id+'></input><a class="uparrow">&uarr;</a><div>'+ currentQuestion.up_votes.length +'</div></div>'+
+						'<div class="element"><a>'+currentQuestion.question+'</a><div><a>asked by '+currentQuestion._user.name+'</a> <a>discuss</a><a>'+
+						'save</a><a>share</a><ul class="tags"><li><a>#'+currentQuestion.tags[0]+'</a></li>'+'<li><a>#'+currentQuestion.tags[1]+'</a></li></ul></div></li>'
+						);
+				}
+				$('.question-items').click(function() {
+					// console.log("the this", $(this).html());
+					if ($(this).html() == lastClickedQuestion) {
+						document.getElementById('right_panel').style.width == "0px";
+						$('#loader-info').show();
+						$('#loading-hide').show();
+						$('#info-title').html("");
+						$('#info-population').html("");
+						lastClickedQuestion = '';
+						return
+					} else {
+						lastClickedQuestion = $(this).html();
+					}
+					if (document.getElementById('right_panel').style.width == "500px") {
+						$('#loader-info').show();
+						$('#loading-hide').show();
+						$('#info-title').html("");
+						$('#info-population').html("");
+					};
+					// console.log("The first child: ", JSON.parse($(this).find("input")[0].value));
+					var tags = JSON.parse($(this).find("input")[0].value);
+					document.getElementById('right_panel').style.width = "500px";
+					$.ajax({
+						method: "POST",
+						url: '../wolfram',
+						data: {input: tags[0]}
+					}).done(function(response) {
+
+						$('#loader-info').hide();
+						$('#loading-hide').hide();
+						console.log("response from node", response);
+						$('#info-title').text(response.queryresult.pod[0].subpod[0].plaintext);
+						var secondInfo = response.queryresult.pod[2];
+						$('#info-population').html('<p>' + secondInfo.$.title + '</p><img src=' + secondInfo.subpod[0].img[0].$.src + '>')
+
+					})
+
+
+				})
+			})
+		})
+
+		// document.getElementById('right_panel').style.width = "500px";
+
+	})
+	</script>
+</head>
+<body>
+	<header>
+		<div id="logo">Curify</div>
+
+		<div id="search-wrap"><label id="search" for="search_input">
+			<input type="input" id="search_input" placeholder="diabetes, cardiovascular disease, asthma">
+		</label></div>
+	</header>
+	<main>
+		<section id="right_panel" class="chat">
+			<ul>
+				<li>
+					<div class="chathead">
+						<div class="section_title">Info</div>
+					</div>
+					<br><br><br>
+					<div class="loader" id="loader-info">
+						<div class="duo duo1">
+							<div class="dot dot-a"></div>
+							<div class="dot dot-b"></div>
+						</div>
+						<div class="duo duo2">
+							<div class="dot dot-a"></div>
+							<div class="dot dot-b"></div>
+						</div>
+					</div>
+					<p id="loading-hide">Loading...</p>
+					<h3 id="info-title"></h3>
+					<br><br>
+					<div id="info-population">
+					</div>
+				</li>
+				<li><div class="conversation">
+					<ul></ul>
+				</div></li>
+			</ul>
+		</section>
+		<section id="mid_panel">
+			<section>
+				<div class="section_title">Questions to ask your physician</div>
+				<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+								<h4 class="modal-title" id="exampleModalLabel">New Question</h4>
+							</div>
+							<div class="modal-body">
+								<form>
+									<div class="form-group">
+										<label for="message-text" class="control-label">Question:</label>
+										<textarea class="form-control" id="message-text"></textarea>
+										<div class="col-xs-2">
+										<label for="ex1">Disease</label>
+											<input class="form-control" id="tg1" type="text">
+										</div>
+										<div class="col-xs-2">
+											<label for="ex1">Disease</label>
+											<input class="form-control" id="tg2" type="text">
+										</div>
+									</div>
+								</form>
+
+							</div>
+							<br><br>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+								<button type="button" id="post" class="btn btn-primary">Post Question</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="question"><ul id="questions"></ul>
+				</div>
+			</section>
+		</section>
+
+	</main>
+</body>
+</html>
