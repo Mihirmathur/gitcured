@@ -9,7 +9,7 @@ img { border: none; max-width: 100%; vertical-align: middle; margin: 0 auto; pad
 
 table { border-collapse: collapse; border-spacing: 0; }
 
-body { font-family: Avenir, HelveticaNeue, "Helvetica Neue", Helvetica, Arial, Avenir, Verdana, Sans-serif; font-size: 14px; line-height: 1.4em; font-weight: 400; color: #000; background-color: #FFF; background-attachment: fixed; background-size: cover; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; -webkit-text-size-adjust: 100%; position: absolute; left: 0; right: 0; top: 0; bottom: 0; max-width: 2000px; margin: 0 auto; }
+body { font-family: Avenir, HelveticaNeue, "Helvetica Neue", Helvetica, Arial, Avenir, Verdana, Sans-serif; font-size: 14px; line-height: 1.4em; font-weight: 400; color: #000; background-color: #FFF; background-size: cover; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; -webkit-text-size-adjust: 100%; position: absolute; left: 0; right: 0; top: 0; bottom: 0; max-width: 2000px; margin: 0 auto; }
 
 p { padding-bottom: 1em; display: block; line-height: 1.4em; }
 
@@ -138,7 +138,7 @@ header:before {
   background-image:url('/healthpat.png');
   background-position:center;
   content:'';
-  position:fixed;
+  position:absolute;
   left:0;right:0;top:0;bottom:0;
   opacity:0.08;
   z-index:0;
