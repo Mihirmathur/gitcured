@@ -39,6 +39,10 @@ module.exports = function(app) {
     // console.log("post request to /question/upvote ", req.body);
     questions.upVote(req, res);
   })
+  app.post('/question/tags', function(req, res) {
+    console.log("post request to /question/tags: ", req.body);
+    // questions.tag(req, res);
+  })
   app.post('/chat/post',function(req, res){
     console.log("chat request has been made", req.body)
     questions.chat(req, res);
@@ -48,6 +52,7 @@ module.exports = function(app) {
   })
   app.get('/logout', function(req, res){
     req.logout();
+    req.session.destroy();
     res.redirect('/');
   });
 }
