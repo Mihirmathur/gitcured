@@ -13,7 +13,13 @@ module.exports = function(app) {
     } else {
       res.redirect('/');
     }
-   })
+  })
+  app.get('/matrix_diabetes.json', function(req, res) {
+    res.sendfile('./server/render_data/matrix_diabetes.json')
+  })
+  app.get('/categories.json', function(req, res) {
+    res.sendfile('./server/render_data/categories.json')
+  })
   app.post('/login', function(req, res) {
     req.login(req.body, function(err) {
       if (err) {

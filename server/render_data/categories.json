@@ -1,0 +1,59 @@
+[
+    {
+        "name": "Caucasian"
+    },
+    {
+        "name": "AfricanAmerican"
+    },
+    {
+        "name": "Asian"
+    },
+    {
+        "name": "Hispanic"
+    },
+    {
+        "name": "Other"
+    },
+    {
+        "name": "?"
+    },
+    {
+        "name": "Female"
+    },
+    {
+        "name": "Male"
+    },
+    {
+        "name": "Unknown/Invalid"
+    },
+    {
+        "name": "[0-10)"
+    },
+    {
+        "name": "[10-20)"
+    },
+    {
+        "name": "[20-30)"
+    },
+    {
+        "name": "[30-40)"
+    },
+    {
+        "name": "[40-50)"
+    },
+    {
+        "name": "[50-60)"
+    },
+    {
+        "name": "[60-70)"
+    },
+    {
+        "name": "[70-80)"
+    },
+    {
+        "name": "[80-90)"
+    },
+    {
+        "name": "[90-100)"
+    }
+]

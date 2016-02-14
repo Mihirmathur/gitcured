@@ -21,13 +21,19 @@ schema = {}
 for i in range(len(schemaList)):
     schema[schemaList[i]] = i
 
-matrix = [ [ 0 for j in range(len(schema))] for i in range(len(schema))]
+schemaToPrint = [ { "name": schemaList[i] } for i in range(len(schema))]
+# print json.dumps(schemaToPrint, indent=4, separators=(',', ': '))
 
+
+matrix = [ [ 0 for j in range(len(schema))] for i in range(len(schema))]
 
 for key in counts:
     matrix[schema[key[0]]][schema[key[1]]] += counts[key]
+    matrix[schema[key[1]]][schema[key[0]]] += counts[key]
     matrix[schema[key[0]]][schema[key[2]]] += counts[key]
+    matrix[schema[key[2]]][schema[key[0]]] += counts[key]
     matrix[schema[key[1]]][schema[key[2]]] += counts[key]
+    matrix[schema[key[2]]][schema[key[1]]] += counts[key]
 
     # if key[0:2] not in expandedCounts:
     #     expandedCounts[key[0:2]] = 0
