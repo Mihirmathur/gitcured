@@ -13,7 +13,7 @@ $(document).ready(function() {
 			console.log("The current question: ", currentQuestion);
 			$('#questions').append('<li>'+
 				'<div class="votes"><input type="hidden" value='+currentQuestion._id+'></input><a class="uparrow">&uarr;</a><div>'+ currentQuestion.up_votes.length +'</div></div>'+
-				'<div class="element"><a>'+currentQuestion.question+'</a><div><a>asked by '+currentQuestion._user.name+'</a> <a>discuss</a><a>'+
+				'<div class="element" data-id="'+currentQuestion._id+'"><a>'+currentQuestion.question+'</a><div><a>asked by '+currentQuestion._user.name+'</a> <a>discuss</a><a>'+
 				'save</a><a>share</a><ul class="tags"><li><a>#'+currentQuestion.tags[0]+'</a></li>'+'<li><a>#'+currentQuestion.tags[1]+'</a></li></ul></div></li>'
 				);
 		}

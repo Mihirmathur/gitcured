@@ -4,9 +4,18 @@ var $window = $(window);
 var $conversation = $('.conversation > ul');
 var $input = $('.inputbox textarea');
 
+var currentroom = "";
+
 var connected = true;
 
-var socket = io();
+var socket = io("/gitcured");
+
+$('#questions').on("click",".element",function(e){
+	currentroom = $(this).attr("data-id")
+	socket.emit('join room', currentroom);
+	$('.conversation > ul').html('');
+})
+
 
 function cleanInput(input){
 	return $('<div/>').text(input).text();
@@ -20,9 +29,10 @@ function sendMessage (message) {
 	}
 
 	$.get("/user", function(data){
-		if(message && connected)
-			socket.emit('new message', {message: message, userid: data.name});
+		if(message && connected){
+			socket.emit('new message', {message: message, userid: data.name, currentroom: currentroom});
 			// socket.emit('join chat room'), {roomid: id}	
+		}
 	});
 }
 
@@ -36,14 +46,25 @@ function addChatMessage (data, options){
 	$conversation.append($convoLI)
 }
 
+
 socket.on('new message', function(data) {
-	addChatMessage(data)
+	console.log("did anything happen?")
+	if(data.currentroom == currentroom) addChatMessage(data)
 })
 
 socket.on('user joined', function(data){
 	log(data.username + ' joined')
 })
 
+socket.on('close room', function(){
+	currentroom = "";
+})
+
+socket.on('history', function(arr){
+	for(var key in arr){
+		addChatMessage(arr[key])
+	}
+})
 
 $input.bind('keypress', function(e) {
 	var code = e.keyCode || e.which;
@@ -52,7 +73,6 @@ $input.bind('keypress', function(e) {
 		$input.val('');
 	}
 });
-
 
 
 
