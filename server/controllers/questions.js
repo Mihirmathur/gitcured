@@ -36,7 +36,7 @@ module.exports = {
   },
   upVote: function(req, res) {
     Questions.findOne({_id: req.body.question._id}, function(err, question) {
-        User.findOne({_id: req.body.user._id}, function(err, user) {
+        Users.findOne({_id: req.body.user._id}, function(err, user) {
           if (err) {
             console.log("Error getting question/user to upVote: ", err);
           } else {
@@ -47,6 +47,7 @@ module.exports = {
               user.save(function(err) {
                 if (err) {
                   console.log("Error saving a new up_vote: ", err);
+                  res.send(false);
                 } else {
                   console.log("Succesfully added a new up_vote");
                   res.send(true);
