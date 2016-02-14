@@ -21,7 +21,7 @@ function sendMessage (message) {
 
 	$.get("/user", function(data){
 		if(message && connected) 
-			socket.emit('new message', {message: message, userid: data.name});
+			socket.emit('new message', {message: message, userid: "randomguy"});
 	});
 }
 

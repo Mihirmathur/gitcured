@@ -102,6 +102,10 @@ header #search {
 	border:1px solid rgba(0,0,0,0.1);
 }
 
+header #search-wrap {
+	z-index:1;
+}
+
 #search > input {
 	border:0px solid transparent;
 	background-color:transparent;
@@ -132,6 +136,7 @@ header {
 header:before {
   display:block;
   background-image:url('/healthpat.png');
+  background-position:center;
   content:'';
   position:absolute;
   left:0;right:0;top:0;bottom:0;
@@ -141,7 +146,7 @@ header:before {
 
 header > div {
   position:relative;
-  z-index:1;
+  z-index:2;
 }
 
 header .button {
@@ -150,6 +155,9 @@ header .button {
   border-color:#FFF;
   margin:0;
   margin-left:8px;
+  height:40px;
+  line-height:1em;
+  cursor:pointer;
 }
 
 header .button:last-of-type {
@@ -171,6 +179,7 @@ main {
 	left:0;right:0;bottom:0;
 	top:72px;
 	position:fixed;
+	z-index:10;
 }
 
 #pseudomain {
