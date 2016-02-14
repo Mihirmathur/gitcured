@@ -21,19 +21,19 @@
   <script type="text/javascript" src="/svg.js"></script>
 
   <script>
-  $(document).ready(function() {
-    $("#search").click(function() {
-      console.log("This fired");
-      location.href = '/search/anonymous';
+    $(document).ready(function() {
+      $("#search").click(function() {
+        console.log("This fired");
+        location.href = '/search/anonymous';
+      })
     })
-  })
   </script>
 </head>
 <body>
 
-<style>
+  <style>
 
- </style>
+  </style>
 
   <header>
     <div id="logo"><div style="float:left">GitCured</div><div id="undefined" style="width:28px;float:right;margin-left:8px"></div></div>
@@ -44,19 +44,19 @@
       <label id="search" for="search_input" style="padding:16px;width:auto;height:auto;margin:16px auto;border:1px solid rgba(0,0,0,0.1);background-color:#A81413;cursor:text">
         <input type="input" id="search_input" placeholder="diabetes, cardiovascular disease, abdominal pain">
       </label>
-        <p style="margin-top:16px;font-size:12px;opacity:0.7">(tip: use commas to combine topics)</p>
+      <p style="margin-top:16px;font-size:12px;opacity:0.7">(tip: use commas to combine topics)</p>
     </div>
   </header>
   <section>
     <div id="div1" class="col-md-12">
-    <div class="col-md-2"></div>
+      <div class="col-md-2"></div>
       <div id="svg2" class="col-md-4">
         <div id="steth"></div>
       </div>
       <div class="col-md-5 tex">
         <p>Patients often do not know what questions to ask when they visit the doctor, or forget the ones they think of.
-        Gitcure provides a user-friendly and intuitive interface for engaging in discussions related to a plethora of diseases and thus better prepares the patients for <span class="red">getting cured</span>.
-         </p>
+          Gitcured provides a user-friendly and intuitive interface for engaging in discussions related to a plethora of diseases and thus better prepares the patients for <span class="red">getting cured</span>.
+        </p>
         <p>So search for any symptom, drug, or disease, and take part in an ongoing conversation with patients all over the world just like you!</p>
       </div>
       <div class="col-md-3">
@@ -65,17 +65,17 @@
     </div>
   </section>
   <br>
-
+  <hr>
   <br>
   <section>
     <div id="div2" class="col-md-12">
-    <div class="col-md-2"></div>
+      <div class="col-md-2"></div>
       <div id="svg3" class="col-md-4">
         <div id="list"></div>
       </div>
       <div class="col-md-5 tex">
-        <p><br>Complete your list of recommended steps for diseases by interacting with people who were in the same situation as you getting cured.
-         </p>
+        <p><br>Complete your list of recommended steps for diseases by interacting with people from all over the world, who were in the same situation as you while getting cured. Click on any question to engage in the in-depth discussion of that question with the <span class="red">GitCured</span> community.
+        </p>
 
       </div>
       <div class="col-md-3">
@@ -83,84 +83,107 @@
       </div>
     </div>
   </section>
-<div class="foot_a">
-<center><h4 id="cpr">Copyright | Curify 2016</h4></center>
-</div>
+  <br>
+  <hr>
+  <br>
+  <section>
+  <div id="div3" class="col-md-12">
+      <div class="col-md-2"></div>
+      <div id="svg4" class="col-md-4">
+        <div id="data"></div>
+      </div>
+      <div class="col-md-5 tex">
+        <p><br>Get detailed data and visualizations for any disease by searching in the search bar at the top and clicking on individual questions.
+        </p>
+
+      </div>
+      <div class="col-md-3">
+
+      </div>
+    </div>
+    <br>
+    <center>
+    <button class="button" data-toggle="modal" data-target="#signupmode" id="footer_signup">Signup Now &nbsp;<i class="fa fa-sign-in"></i></button>
+    </center>
+  </section>
+  <div class="foot_a">
+    <center><h4 id="cpr">Copyright | Curify 2016</h4></center>
+  </div>
 
   <section>
 
-          <div class="modal fade" id="signupmode" tabindex="-1" role="dialog" aria-labelledby="signupmodeLabel">
-          <div class="modal-dialog" style="max-width:400px;" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="exampleModalLabel">Sign Up</h4>
-              </div>
-              <div class="modal-body">
-                <form id="signupform" method="post" action="/register">
-                  <div class="form-group">
-                    <label for="full-name" class="control-label">Full name</label>
-                    <input type="text" name="name" class="form-control" id="full-name"><br>
-
-                    <label for="age" class="control-label">Age</label>
-                    <input type="number" name="age" class="form-control" id="age"><br>
-
-                    <label for="email" class="control-label">Email</label>
-                    <input type="email" name="username" class="form-control" id="email"><br>
-
-                    <label for="password" class="control-label">Password</label>
-                    <input type="password" name="password" class="form-control" id="password">
-                  </div>
-                </form>
-
-              </div>
-              <br><br>
-              <div class="modal-footer">
-                <button type="button" id="signup_but" class="btn btn-primary">Sign Up</button>
-                <script type="text/javascript">
-                  $('#signup_but').click(function(){
-                       $('#signupform').submit();
-                   });
-                </script>
-              </div>
-            </div>
+    <div class="modal fade" id="signupmode" tabindex="-1" role="dialog" aria-labelledby="signupmodeLabel">
+      <div class="modal-dialog" style="max-width:400px;" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="exampleModalLabel">Sign Up</h4>
           </div>
-        </div>
+          <div class="modal-body">
+            <form id="signupform" method="post" action="/register">
+              <div class="form-group">
+                <label for="full-name" class="control-label">Full name</label>
+                <input type="text" name="name" class="form-control" id="full-name"><br>
 
-          <div class="modal fade" id="loginmode" tabindex="-1" role="dialog" aria-labelledby="loginmodeLabel">
-          <div class="modal-dialog" style="max-width:400px;" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="exampleModalLabel">Log In</h4>
+                <label for="age" class="control-label">Age</label>
+                <input type="number" name="age" class="form-control" id="age"><br>
+
+                <label for="email" class="control-label">Email</label>
+                <input type="email" name="username" class="form-control" id="email"><br>
+
+                <label for="password" class="control-label">Password</label>
+                <input type="password" name="password" class="form-control" id="password">
               </div>
-              <div class="modal-body">
-                <form id="loginform" method="post" action="/login">
-                  <div class="form-group">
+            </form>
 
-                    <label for="Iemail" class="control-label">Email</label>
-                    <input type="email" name="username" class="form-control" id="Iemail"><br>
-
-                    <label for="Ipassword" class="control-label">Password</label>
-                    <input type="password" name="password" class="form-control" id="Ipassword">
-                  </div>
-                </form>
-
-              </div>
-              <br><br>
-              <div class="modal-footer">
-                <button type="button" id="login_but" class="btn btn-primary">Log In</button>
-                <script type="text/javascript">
-                  $('#login_but').click(function(){
-                       $('#loginform').submit();
-                   });
-                </script>
-              </div>
-            </div>
           </div>
-        </div>
+          <br><br>
+          <div class="modal-footer">
+            <button type="button" id="signup_but" class="btn btn-primary">Sign Up</button>
+            <script type="text/javascript">
+              $('#signup_but').click(function(){
+               $('#signupform').submit();
+             });
+           </script>
+         </div>
+       </div>
+     </div>
+   </div>
 
-  </section>
-  
+   <div class="modal fade" id="loginmode" tabindex="-1" role="dialog" aria-labelledby="loginmodeLabel">
+    <div class="modal-dialog" style="max-width:400px;" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="exampleModalLabel">Log In</h4>
+        </div>
+        <div class="modal-body">
+          <form id="loginform" method="post" action="/login">
+            <div class="form-group">
+
+              <label for="Iemail" class="control-label">Email</label>
+              <input type="email" name="username" class="form-control" id="Iemail"><br>
+
+              <label for="Ipassword" class="control-label">Password</label>
+              <input type="password" name="password" class="form-control" id="Ipassword">
+            </div>
+          </form>
+
+        </div>
+        <br><br>
+        <div class="modal-footer">
+          <button type="button" id="login_but" class="btn btn-primary">Log In</button>
+          <script type="text/javascript">
+            $('#login_but').click(function(){
+             $('#loginform').submit();
+           });
+         </script>
+       </div>
+     </div>
+   </div>
+ </div>
+
+</section>
+
 </body>
 </html>

@@ -14,12 +14,17 @@
 #div1{
 	margin-top: 60px;
 	padding-bottom: 30px;
-
 	
 }
 
 #div2{
 	margin-top: 60px;
+		padding-bottom: 30px;
+}
+
+#div3{
+	margin-top: 60px;
+		padding-bottom: 40px;
 }
 .tex{
 	font-size: 1.2em;
@@ -41,23 +46,40 @@
 	height: 200px;
 }
 
-.hr {
-background-color: #FFFFFF;
-border: 1px solid #000000;
-height: 10px;
-margin: 10px 0;
-width: 760px;
+#data{
+
+	width: 200px;
+	height: 200px;
+
+}
+
+hr {
+    height: 2px;
+    background-color:#555;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 75%;
 }
 
 #cpr{
 	padding-top: 45px;
 }
 .foot_a{
-	margin-top: 700px;
+	margin-top: 100px;
 	height: 100px;
 	background-color: #e93432;
 	color: white;
 	vertical-align: middle;
+}
+#footer_signup{
+background-color:#e93432;;
+  color:#FFF;
+  border-color:#e93432;;
+
+  height:40px;
+  width: 140px;
+
+  cursor:pointer;
 }
 .typed-cursor{
     opacity: 1;
