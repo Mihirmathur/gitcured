@@ -1,7 +1,6 @@
 var mongoose = require('mongoose');
 var Questions = mongoose.model('Questions');
 var Users = mongoose.model('Users');
-var Chat = mongoose.model('Chat');
 
 module.exports = {
   index: function(req, res) {
@@ -70,7 +69,7 @@ module.exports = {
     })
   },
   chat: function(req, res) {
-    var chat = new Chat(req.body.chat);
+    var chat = {user:'',timestamp:'',message:''};
     console.log(req.body);
     // req.body = {""}
     Question.findOne({_id: req.body.question._id}, function(err, question){
@@ -78,6 +77,9 @@ module.exports = {
         if(err){
           console.log("ERROR", error);
         } else {
+          chat.user = _id;
+          chat.timestamp = res.body.message.timestamp;
+          chat.message = res.body.message.text;
           question.chat.push(chat);
         }
       })
