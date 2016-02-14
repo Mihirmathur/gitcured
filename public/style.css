@@ -1,7 +1,13 @@
 #div1{
 	margin-top: 60px;
+	padding-bottom: 30px;
+
+	
 }
 
+#div2{
+	margin-top: 60px;
+}
 .tex{
 	text-align: justify;
 	font-size: 1.2em;
@@ -14,4 +20,17 @@
 
 .red{
 	color:#e93432;
+}
+
+#list{
+	width: 200px;
+	height: 200px;
+}
+
+.hr {
+background-color: #FFFFFF;
+border: 1px solid #000000;
+height: 10px;
+margin: 10px 0;
+width: 760px;
 }
