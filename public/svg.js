@@ -35,8 +35,8 @@ var pathObj = {
  $('#undefined').lazylinepainter( 
  {
     "svgData": pathObj,
-    "strokeWidth": 2,
-    "strokeColor": "#e09b99"
+    "strokeWidth": 5,
+    "strokeColor": "#FFF"
 }).lazylinepainter('paint'); 
  });/* 
  Setup and Paint your lazyline! 

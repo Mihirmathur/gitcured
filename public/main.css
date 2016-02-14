@@ -70,10 +70,15 @@ header #logo {
 	margin-right:16px;
 }
 
+header #logo > a {
+	color:#FFF;
+	text-decoration: none;
+}
+
 header #user {
 	float:right;
 	line-height:24px;
-	padding:8px 0;
+	padding:0px 0;
 	margin-left:16px;
 	height:40px;
 }
@@ -90,10 +95,11 @@ header #search {
 	width:auto;
 	overflow:hidden;
 	max-width:500px;
-	background-color:#C21B19;
+	background-color:#A81413;
 	padding:8px;
 	border-radius:4px;
 	cursor:text;
+	border:1px solid rgba(0,0,0,0.1);
 }
 
 #search > input {
@@ -112,6 +118,50 @@ header #search {
 #search > input::-webkit-input-placeholder { color: rgba(255, 255, 255, 0.5); }
 
 input:-moz-placeholder { color: rgba(255, 255, 255, 0.5); }
+
+header { 
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e93432+0,ce1a1a+100 */
+  background: #e93432; /* Old browsers */
+  background: -moz-linear-gradient(left, #e93432 0%, #ce1a1a 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, #e93432 0%,#ce1a1a 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #e93432 0%,#ce1a1a 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e93432', endColorstr='#ce1a1a',GradientType=1 ); /* IE6-9 */
+  position:relative;height:auto;
+}
+
+header:before {
+  display:block;
+  background-image:url('/healthpat.png');
+  content:'';
+  position:absolute;
+  left:0;right:0;top:0;bottom:0;
+  opacity:0.08;
+  z-index:0;
+}
+
+header > div {
+  position:relative;
+  z-index:1;
+}
+
+header .button {
+  background-color:transparent;
+  color:#FFF;
+  border-color:#FFF;
+  margin:0;
+  margin-left:8px;
+}
+
+header .button:last-of-type {
+  border-color:transparent;
+}
+
+header .button:hover {
+  background-color:#e93432;
+  color:#FFF;
+  border-color:#e93432;
+}
+
 
 #username{
 	color: white;
