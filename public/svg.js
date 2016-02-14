@@ -20,8 +20,8 @@ var pathObj = {
             }
         ],
         "dimensions": {
-            "width": 1000,
-            "height": 1000
+            "width": 58,
+            "height": 58
         }
     }
 }; 

@@ -12,7 +12,6 @@ var MongoStore = require('connect-mongo')(session);
 var uuid = require('node-uuid');
 
 
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cookieParser('TreeHacks'));
@@ -43,25 +42,30 @@ require('./config/routes.js')(app);
 var numUsers = 0;
 
 io.on('connection', function (socket) {
-	console.log("a user has connected")
+	console.log("a user has connected");
 
 	socket.on('new message', function(data){
-		socket.broadcast.emit('new message', {
-			username: "somebody",
-			message: data
-		})
-	})
+		console.log("message has emitted")
+		var d = new Date()
+		var data_message = {
+			username: data.userid,
+			timestamp: d.toLocaleTimeString().replace(/(.*)\D\d+/, '$1'),
+			message: data.message
+		}
+		socket.emit('new message', data_message)
+		socket.broadcast.emit('new message', data_message)
+	});
 
 	socket.on('add user', function(username) {
 		if (addedUser) return;
 		++numUsers;
-	})
+	});
 
 	socket.on('disconnect', function(){
 		console.log("a user has disconnected")
 		--numUsers;
 	})
-})
+});
 
 
 http.listen(8000, function() {
