@@ -58,6 +58,17 @@ module.exports = {
         })
     })
   },
+  tags: function(req, res) {
+    Question.find({tags: {$contains: req.body.input}}, function(err, questions) {
+      if (err) {
+        console.log("Error getting questions with matching tags");
+        res.end();
+      } else {
+        console.log("Succesfully got questions with mathing tags");
+        res.json(questions);
+      }
+    })
+  },
   chat: function(req, res) {
     var chat = new Chat(req.body.chat);
     console.log(req.body);
