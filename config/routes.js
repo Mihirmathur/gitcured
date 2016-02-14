@@ -3,13 +3,14 @@ var React = require('react');
 var users = require('./../server/controllers/users.js');
 var questions = require('./../server/controllers/questions.js');
 var passport = require('passport');
+var path = require('path')
 
 
 module.exports = function(app) {
   app.get('/search', function(req, res) {
-    console.log("the session: ", req.session);
+    // console.log("the session: ", req.session);
     if (req.session.passport.user) {
-      res.sendfile('./public/healthify_results.html')
+      res.sendFile(path.resolve('public/healthify_results.html'));
     } else {
       res.redirect('/');
     }

@@ -8,14 +8,14 @@ $.ajax({
 });
 
 var user_logged;
-// $.ajax({
-// 	method: "GET",
-// 	url: "/user"
-// }).done(function(data){
-// 	user_logged=data;
-// 	console.log(data);
-// });
- 
+
+$.ajax({
+	method: "GET",
+	url: "/user"
+}).done(function(data){
+	user_logged=data;
+	console.log(data);
+});
 
 
 $('#exampleModal').on('show.bs.modal', function (event) {
@@ -36,9 +36,9 @@ $('#exampleModal').on('show.bs.modal', function (event) {
   	console.log(quest);
   	modal.toggle();
 
-  	q=[{user: user_logged, 
-  		question: quest, 
-  		tags: [t1,t2] 
+  	q=[{user: user_logged,
+  		question: quest,
+  		tags: [t1,t2]
   		  }
   		];
 
@@ -62,7 +62,6 @@ $('#exampleModal').on('show.bs.modal', function (event) {
   			'<div class="element"><a>'+quest+'</a><div><a>asked by'+user_logged+'</a> <a>discuss</a><a>'+
   			'save</a><a>share</a><ul class="tags"><li><a>#'+t1+'</a></li>'+'<li><a>'+t2+'</a></li></ul></div></li>'
   			);
-
 
   		});
 });
