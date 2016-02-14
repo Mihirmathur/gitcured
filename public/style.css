@@ -1,3 +1,16 @@
+::-webkit-scrollbar {
+	width: 7px;
+}
+::-webkit-scrollbar-track {
+	background-color: #2C3E50;
+}
+::-webkit-scrollbar-thumb {
+	background-color: #E74C3C;
+}
+::-webkit-scrollbar-button {
+	background-color: #2980B9;
+} 
+
 #div1{
 	margin-top: 60px;
 	padding-bottom: 30px;
@@ -9,12 +22,11 @@
 	margin-top: 60px;
 }
 .tex{
-	text-align: justify;
 	font-size: 1.2em;
-	margin-left: -20px;
+	margin-left: -70px;
 }
 
-<<<<<<< HEAD
+
 #steth{
 	width: 200px;
 	height: 200px;
@@ -37,6 +49,16 @@ margin: 10px 0;
 width: 760px;
 }
 
+#cpr{
+	padding-top: 45px;
+}
+.foot_a{
+	margin-top: 700px;
+	height: 100px;
+	background-color: #e93432;
+	color: white;
+	vertical-align: middle;
+}
 .typed-cursor{
     opacity: 1;
     -webkit-animation: blink 0.7s infinite;
@@ -57,7 +79,7 @@ width: 760px;
     0% { opacity:1; }
     50% { opacity:0; }
     100% { opacity:1; }
-=======
+
 .topmore{
 	padding-top: 14px;
 }
@@ -66,5 +88,5 @@ width: 760px;
 	padding-top: 17px;
 	margin-bottom: 2px;
 	color: white !important;
->>>>>>> parent of fb79011... added search bar and  css
+
 }
