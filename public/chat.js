@@ -1,5 +1,5 @@
 $(function(){
-	
+
 var $window = $(window);
 var $conversation = $('.conversation > ul');
 var $input = $('.inputbox textarea');
@@ -20,8 +20,9 @@ function sendMessage (message) {
 	}
 
 	$.get("/user", function(data){
-		if(message && connected) 
-			socket.emit('new message', {message: message, userid: "randomguy"});
+		if(message && connected)
+			socket.emit('new message', {message: message, userid: data.name});
+			// socket.emit('join chat room'), {roomid: id}	
 	});
 }
 
@@ -49,7 +50,7 @@ $input.bind('keypress', function(e) {
 	if(code == 13) { //Enter keycode
 		sendMessage($input.val());
 		$input.val('');
-	}	
+	}
 });
 
 
