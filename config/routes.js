@@ -9,7 +9,7 @@ var path = require('path')
 module.exports = function(app) {
   app.get('/search', function(req, res) {
     // console.log("the session: ", req.session);
-    if (req.session.passport.user) {
+    if (req.session.loggedIn) {
       res.sendFile(path.resolve('public/healthify_results.html'));
     } else {
       res.redirect('/');
@@ -22,13 +22,8 @@ module.exports = function(app) {
     res.sendfile('./server/render_data/categories.json')
   })
   app.post('/login', function(req, res) {
-    req.login(req.body, function(err) {
-      if (err) {
-        console.log("error from /login: ", err);
-        return res.redirect('/');
-      }
-      return res.redirect('/search');
-    });
+    // console.log("user to login: ", req.body);
+    users.login(req, res);
   })
   app.post('/register', function(req, res) {
     users.create(req, res);
@@ -37,7 +32,7 @@ module.exports = function(app) {
     questions.index(req, res);
   })
   app.post('/question/create', function(req, res) {
-    console.log("post request to /question/add ", req.body);
+    // console.log("post request to /question/create ", req.body);
     questions.create(req, res);
   })
   app.post('/question/upvote', function(req, res) {

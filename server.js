@@ -20,7 +20,7 @@ app.use(session({
         return uuid.v1();
     },
     store: new MongoStore({
-        url: 'mongodb://localhost/treehacks',
+        url: 'mongodb://localhost/treehacks-health',
         autoRemove: 'native',
         touchAfter: 24 * 3600 // time period in seconds || = 24 hours; Let the session be updated once on a 24 hour period
     }),

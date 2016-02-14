@@ -14,16 +14,17 @@ module.exports = {
     })
   },
   create: function(req, res) {
-    var question = new Questions(req.body);
-    question.save(function(err) {
-      if (err) {
-        console.log("Error saving the question: ", err);
-        res.send(false)
-      } else {
-        console.log("Succesfully saved a new question");
-        res.send(true)
-      }
-    })
+    console.log("post request to /question/add ", req.body);
+    // var question = new Questions(req.body);
+    // question.save(function(err) {
+    //   if (err) {
+    //     console.log("Error saving the question: ", err);
+    //     res.send(false)
+    //   } else {
+    //     console.log("Succesfully saved a new question");
+    //     res.send(true)
+    //   }
+    // })
   },
   upVote: function(req, res) {
     Questions.findOne({_id: req.body.question._id}, function(err, question) {
