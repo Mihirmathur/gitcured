@@ -41,7 +41,7 @@ $(document).ready(function() {
 	}).done(function(data){
 		if (data) {
 			user_logged = data;
-			// console.log("Logged user object: ", data);
+			$('#user-display-name').text(data.name);
 		} else {
 			console.log("User is undefined");
 		}
