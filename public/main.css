@@ -219,6 +219,7 @@ main > section, #pseudomain > section {
 	overflow:auto;
 	padding:24px;
 	padding-bottom:64px;
+	display:none;
 }
 
 .section_title {
@@ -310,6 +311,7 @@ nav li a:hover {
 
 #questions > li {
 	display:table-row;
+	cursor:pointer;
 }
 
 #questions > li:nth-child(even) {

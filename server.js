@@ -43,6 +43,7 @@ require('./config/routes.js')(app);
 
 var mongoose = require('mongoose');
 var Questions = mongoose.model('Questions');
+var Users = mongoose.model('Users');
 //var Chats = mongoose.model('Chats');
 
 var numUsers = 0;
@@ -55,7 +56,9 @@ nsp.on('connection', function (socket) {
 	socket.on('join room',function(data){
 		socket.join(data)
 		Questions.findOne({_id: data}, function(err, question) {
-			socket.emit('history', question.chat)
+			Users.findOne({_id: question._user}, function(err,user){
+				socket.emit('history', [question,user.name])
+			})
 		})
 	})
 
