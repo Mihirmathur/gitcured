@@ -17,6 +17,7 @@
 		width: 0px;
 		-webkit-transition-duration: 3s;
 		transition-duration: 3s;
+		display: block;
 	}
 	.loader {
 	  position: relative;
@@ -99,8 +100,7 @@
 	<script>
 	$(document).ready(function() {
 
-			var user_logged;
-			var lastClickedQuestion;
+		var user_logged;
 
 		function xmlToJson(xml) {
 
@@ -158,8 +158,30 @@
 					);
 			}
 			$('.question-items').click(function() {
-				$(this).first()
-				console.log("The first child: ", $(this).first());
+				// console.log("the this", $(this).html());
+
+				if (document.getElementById('right_panel').style.width == "500px") {
+					$('#loader-info').show();
+					$('#loading-hide').show();
+					$('#info-title').html("");
+					$('#info-population').html("");
+				};
+				// console.log("The first child: ", JSON.parse($(this).find("input")[0].value));
+				var tags = JSON.parse($(this).find("input")[0].value);
+				// document.getElementById('right_panel').style.display = "block";
+				document.getElementById('right_panel').style.width = "500px";
+				$.ajax({
+					method: "POST",
+					url: '../wolfram',
+					data: {input: tags[0]}
+				}).done(function(response) {
+					$('#loader-info').hide();
+					$('#loading-hide').hide();
+					console.log("response from node", response);
+					$('#info-title').text(response.queryresult.pod[0].subpod[0].plaintext);
+					var secondInfo = response.queryresult.pod[2];
+					$('#info-population').html('<p>' + secondInfo.$.title + '</p><img src=' + secondInfo.subpod[0].img[0].$.src + '>')
+				})
 			})
 		});
 
@@ -182,17 +204,7 @@
 				}
 				$('.question-items').click(function() {
 					// console.log("the this", $(this).html());
-					if ($(this).html() == lastClickedQuestion) {
-						document.getElementById('right_panel').style.width == "0px";
-						$('#loader-info').show();
-						$('#loading-hide').show();
-						$('#info-title').html("");
-						$('#info-population').html("");
-						lastClickedQuestion = '';
-						return
-					} else {
-						lastClickedQuestion = $(this).html();
-					}
+
 					if (document.getElementById('right_panel').style.width == "500px") {
 						$('#loader-info').show();
 						$('#loading-hide').show();
@@ -201,23 +213,20 @@
 					};
 					// console.log("The first child: ", JSON.parse($(this).find("input")[0].value));
 					var tags = JSON.parse($(this).find("input")[0].value);
+					// document.getElementById('right_panel').style.display = "block";
 					document.getElementById('right_panel').style.width = "500px";
 					$.ajax({
 						method: "POST",
 						url: '../wolfram',
 						data: {input: tags[0]}
 					}).done(function(response) {
-
 						$('#loader-info').hide();
 						$('#loading-hide').hide();
 						console.log("response from node", response);
 						$('#info-title').text(response.queryresult.pod[0].subpod[0].plaintext);
 						var secondInfo = response.queryresult.pod[2];
 						$('#info-population').html('<p>' + secondInfo.$.title + '</p><img src=' + secondInfo.subpod[0].img[0].$.src + '>')
-
 					})
-
-
 				})
 			})
 		})
