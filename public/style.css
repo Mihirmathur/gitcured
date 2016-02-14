@@ -10,7 +10,9 @@
 ::-webkit-scrollbar-button {
 	background-color: #2980B9;
 } 
-
+.not_link{
+	color: white;
+}
 #div1{
 	margin-top: 60px;
 	padding-bottom: 30px;
