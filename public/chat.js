@@ -60,6 +60,12 @@ socket.on('close room', function(){
 	currentroom = "";
 })
 
+socket.on('history', function(arr){
+	for(var key in arr){
+		addChatMessage(arr[key])
+	}
+})
+
 $input.bind('keypress', function(e) {
 	var code = e.keyCode || e.which;
 	if(code == 13) { //Enter keycode

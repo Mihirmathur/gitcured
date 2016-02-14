@@ -39,6 +39,12 @@ app.use(express.static(path.join(__dirname, './public')));
 require('./config/mongoose.js');
 require('./config/routes.js')(app);
 
+
+
+var mongoose = require('mongoose');
+var Questions = mongoose.model('Questions');
+//var Chats = mongoose.model('Chats');
+
 var numUsers = 0;
 
 var nsp = io.of("/gitcured");
@@ -48,6 +54,9 @@ nsp.on('connection', function (socket) {
 
 	socket.on('join room',function(data){
 		socket.join(data)
+		Questions.findOne({_id: data}, function(err, question) {
+			socket.emit('history', question.chat)
+		})
 	})
 
 	socket.on('close room', function(){
@@ -60,13 +69,19 @@ nsp.on('connection', function (socket) {
 		var data_message = {
 			username: data.userid,
 			timestamp: d.toLocaleTimeString().replace(/(.*)\D\d+/, '$1'),
-			message: data.message,
-			currentroom: data.currentroom
+			message: data.message
 		}
 
-		console.log("this works." + data.currentroom)
-		socket.emit('new message', data_message)
-		socket.broadcast.emit('new message', data_message)
+		Questions.findOne({_id: data.currentroom}, function(err, question) {
+
+			question.chat.push(data_message)
+			question.save()
+			console.log(question.chat);
+			data_message.currentroom = data.currentroom;
+			console.log("this works." + data.currentroom)
+			socket.emit('new message', data_message)
+			socket.broadcast.emit('new message', data_message)
+		})
 	});
 
 	socket.on('add user', function(username) {
