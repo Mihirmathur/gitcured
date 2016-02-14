@@ -41,17 +41,30 @@ require('./config/routes.js')(app);
 
 var numUsers = 0;
 
-io.on('connection', function (socket) {
+var nsp = io.of("/gitcured");
+
+nsp.on('connection', function (socket) {
 	console.log("a user has connected");
 
+	socket.on('join room',function(data){
+		socket.join(data)
+	})
+
+	socket.on('close room', function(){
+		for(var key in socket.rooms)
+			socket.leave(key);
+	})
+
 	socket.on('new message', function(data){
-		console.log("message has emitted")
 		var d = new Date()
 		var data_message = {
 			username: data.userid,
 			timestamp: d.toLocaleTimeString().replace(/(.*)\D\d+/, '$1'),
-			message: data.message
+			message: data.message,
+			currentroom: data.currentroom
 		}
+
+		console.log("this works." + data.currentroom)
 		socket.emit('new message', data_message)
 		socket.broadcast.emit('new message', data_message)
 	});

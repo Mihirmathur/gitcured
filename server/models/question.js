@@ -8,7 +8,7 @@ var QuestionSchema = new Schema({
   up_votes: [{type: Schema.Types.ObjectId, ref: 'Users'}],
   created_at: {type: Date, default: Date.now},
   updated_at: {type: Date, default: Date.now},
-  chat: [{type: Schema.Types.ObjectId, ref: 'Chat'}]
+  chat: [{type: Schema.Types.ObjectId}]
 })
 
 mongoose.model("Questions", QuestionSchema);
