@@ -48,12 +48,12 @@ module.exports = {
     })
   },
   find: function(req, res) {
-    console.log("request boddy username: ", req.session);
-    Users.findOne({username: req.session.username}, function(err, user) {
+    // console.log("request boddy username: ", req.session);
+    Users.findOne({username: req.session.user.username}, function(err, user) {
       if (err) {
         console.log("Errror getting the user: ", err);
       } else {
-        console.log("Succesfully found the user: ", user);
+        // console.log("Succesfully found the user: ", user);
         res.json(user);
       }
     })
