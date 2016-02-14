@@ -14,6 +14,7 @@ $('#questions').on("click",".element",function(e){
 	currentroom = $(this).attr("data-id")
 	socket.emit('join room', currentroom);
 	$('.conversation > ul').html('');
+	$('#right_panel').show();
 })
 
 
@@ -58,11 +59,21 @@ socket.on('user joined', function(data){
 
 socket.on('close room', function(){
 	currentroom = "";
+	$("#right_panel").hide();
 })
 
 socket.on('history', function(arr){
-	for(var key in arr){
-		addChatMessage(arr[key])
+	$('.chathead > .section_title').text(arr[0].question);
+	$('.chathead > .section_subtitle a').text(arr[1]);
+	var count = 0;
+	for(var key in arr[0].chat){
+		addChatMessage(arr[0].chat[key])
+		count++;
+	}
+
+	if(count == 0) {
+		var $convoLI = $('<li />').html("Looks like nobody has yet talked about this topic. Be the first...").css({color:"#AAA"})
+		$conversation.append($convoLI)
 	}
 })
 

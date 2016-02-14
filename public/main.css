@@ -138,7 +138,7 @@ header:before {
   background-image:url('/healthpat.png');
   background-position:center;
   content:'';
-  position:fixed;
+  position:absolute;
   left:0;right:0;top:0;bottom:0;
   opacity:0.08;
   z-index:0;
@@ -219,6 +219,7 @@ main > section, #pseudomain > section {
 	overflow:auto;
 	padding:24px;
 	padding-bottom:64px;
+	display:none;
 }
 
 .section_title {
@@ -310,6 +311,7 @@ nav li a:hover {
 
 #questions > li {
 	display:table-row;
+	cursor:pointer;
 }
 
 #questions > li:nth-child(even) {

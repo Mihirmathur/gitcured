@@ -22,7 +22,6 @@
 	<header>
 		<div id="logo">Curify</div>
 		<div id="user"><button class="button" id="user-display-name"></button><a href="/logout"><button class="button">Logout</button></a></div>
-
 		<div id="search-wrap"><label id="search" for="search_input">
 			<input type="input" id="search_input" placeholder="diabetes, cardiovascular disease, asthma" value="diabetes">
 		</label></div>
@@ -43,14 +42,14 @@
 			<ul>
 				<li>
 					<div class="chathead">
-						<div class="section_title">This is a question?</div>
+						<div class="section_title" style="white-space: nowrap;text-overflow: ellipsis;overflow:hidden;padding-bottom:4px;">?</div>
 						<div class="section_subtitle">asked by <a>ineedhelp</a></div>
 					</div>
 				</li>
 				<li><div class="conversation">
 					<ul></ul>
 				</div></li>
-				<li><div class="inputbox"><div class="textarea_wrap"><textarea></textarea></div></div></li>
+				<li><div class="inputbox"><label class="textarea_wrap" for="texta" style="display:block;font-weight:400;cursor:text"><textarea id="texta"></textarea></label></div></li>
 
 			</ul>
 

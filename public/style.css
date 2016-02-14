@@ -14,6 +14,7 @@
 	margin-left: -20px;
 }
 
+<<<<<<< HEAD
 #steth{
 	width: 200px;
 	height: 200px;
@@ -56,4 +57,14 @@ width: 760px;
     0% { opacity:1; }
     50% { opacity:0; }
     100% { opacity:1; }
+=======
+.topmore{
+	padding-top: 14px;
+}
+
+.brand{
+	padding-top: 17px;
+	margin-bottom: 2px;
+	color: white !important;
+>>>>>>> parent of fb79011... added search bar and  css
 }
