@@ -5,7 +5,16 @@ $.ajax({
 	url: "questions/index"
 }).done(function( quest_rec ) {
 
-	console.log( "Data Saved: " + quest_rec );
+	console.log( "Data Saved: ", quest_rec );
+	for (var i = 0; i < quest_rec.length; i++) {
+		console.log("Inside the loop");
+		var currentQuestion = quest_rec[i];
+		$('#questions').append('<li>'+
+			'<div class="votes"><a class="uparrow">&uarr;</a><div>'+ currentQuestion.up_votes.length +'</div></div>'+
+			'<div class="element"><a>'+currentQuestion.question+'</a><div><a>asked by '+currentQuestion._user.name+'</a> <a>discuss</a><a>'+
+			'save</a><a>share</a><ul class="tags"><li><a>#'+currentQuestion.tags[0]+'</a></li>'+'<li><a>#'+currentQuestion.tags[1]+'</a></li></ul></div></li>'
+			);
+	}
 });
 
 $.ajax({
@@ -13,8 +22,8 @@ $.ajax({
 	url: "/user"
 }).done(function(data){
 	if (data) {
-		user_logged=data;
-		console.log("Logged user object: ", data);
+		user_logged = data;
+		// console.log("Logged user object: ", data);
 	} else {
 		console.log("User is undefined");
 	}
@@ -41,6 +50,7 @@ $('#exampleModal').on('show.bs.modal', function (event) {
   			method: "POST",
   			url: "/question/create",
   			data: { user: user_logged,
+								question: question,
 								tags: [t1, t2] }
   		}).done(function(response){
   			console.log("Response from queston/create post: ", response);
@@ -51,7 +61,7 @@ $('#exampleModal').on('show.bs.modal', function (event) {
   		});
 
   		$('#questions').append('<li>'+
-  			'<div class="votes"><a class="uparrow">&uarr;</a><div>1010</div></div>'+
+  			'<div class="votes"><a class="uparrow">&uarr;</a><div>0</div></div>'+
   			'<div class="element"><a>'+question+'</a><div><a>asked by'+user_logged+'</a> <a>discuss</a><a>'+
   			'save</a><a>share</a><ul class="tags"><li><a>#'+t1+'</a></li>'+'<li><a>'+t2+'</a></li></ul></div></li>'
   			);
